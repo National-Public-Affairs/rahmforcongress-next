@@ -1,0 +1,24 @@
+@use 'sass:math';
+
+/////////////////////////////
+// BREAKPOINTS
+/////////////////////////////
+
+$breakpoint-xs-width: 400px !default;
+$breakpoint-s-width: 768px !default;
+$breakpoint-m-width: 1024px !default;
+$breakpoint-l-width: 1440px !default;
+$breakpoint-xl-width: 1920px !default;
+$breakpoint-xxl-width: 2300px !default;
+
+//////////////////////////////
+// BASELINE GRID
+//////////////////////////////
+
+$baseline-px : 25px !default;
+$baseline-body-size : 18px !default;
+$baseline : math.div($baseline-px, $baseline-body-size)+rem;
+
+@function base($multiplier) {
+  @return (math.div($baseline-px, $baseline-body-size) * $multiplier)+rem;
+}
