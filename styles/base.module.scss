@@ -15,7 +15,7 @@ $breakpoint-xxl-width: 2300px !default;
 // BASELINE GRID
 //////////////////////////////
 
-$baseline-px : 25px !default;
+$baseline-px : 20px !default;
 $baseline-body-size : 18px !default;
 $baseline : math.div($baseline-px, $baseline-body-size)+rem;
 
@@ -29,3 +29,8 @@ $baseline : math.div($baseline-px, $baseline-body-size)+rem;
 $zindex-page: 10;
 $zindex-modal: 20;
 $zindex-header: 30;
+
+//////////////////////////////
+// HEADER
+//////////////////////////////
+$header-height: base(8);
