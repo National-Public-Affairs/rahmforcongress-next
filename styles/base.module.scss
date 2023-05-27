@@ -34,3 +34,51 @@ $zindex-header: 30;
 // HEADER
 //////////////////////////////
 $header-height: base(8);
+
+//////////////////////////////
+// STRUCTURE
+//////////////////////////////
+$grid-container-width: 920;
+$grid-overflow: base(6);
+$gutter-xxl: base(12);
+$gutter-xl: base(7);
+
+////////////////////////////
+// MEDIA QUERIES
+/////////////////////////////
+
+@mixin extra-small-break {
+  @media (max-width: $breakpoint-xs-width) {
+    @content;
+  }
+}
+
+@mixin small-break {
+  @media (max-width: $breakpoint-s-width) {
+    @content;
+  }
+}
+
+@mixin mid-break {
+  @media (max-width: $breakpoint-m-width) {
+    @content;
+  }
+}
+
+@mixin large-break {
+  @media (max-width: $breakpoint-l-width) {
+    @content;
+  }
+}
+
+@mixin extra-large-break {
+  @media (max-width: $breakpoint-xl-width) {
+    @content;
+  }
+}
+
+@mixin extra-extra-large-break {
+  @media (max-width: $breakpoint-xxl-width) {
+    @content;
+  }
+}
