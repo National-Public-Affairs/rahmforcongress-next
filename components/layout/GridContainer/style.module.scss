@@ -1,0 +1,7 @@
+@import '../../../styles/base.module.scss';
+
+.gridContainer {
+  max-width: $grid-container-width;
+  margin-left: auto;
+  margin-right: auto;
+}
