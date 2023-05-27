@@ -22,3 +22,10 @@ $baseline : math.div($baseline-px, $baseline-body-size)+rem;
 @function base($multiplier) {
   @return (math.div($baseline-px, $baseline-body-size) * $multiplier)+rem;
 }
+
+//////////////////////////////
+// Z-INDEX
+//////////////////////////////
+$zindex-page: 10;
+$zindex-modal: 20;
+$zindex-header: 30;
