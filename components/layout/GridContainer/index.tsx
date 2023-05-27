@@ -24,10 +24,10 @@ const GridContainer: React.FC<{ className?: string, children: any }> = ({
 
 const Context = createContext<number>(0);
 
-export const GridContainerWidthProvider: React.FC = ({ children }) => {
+export const GridContainerWidthProvider: React.FC = ({ children }: any) => {
   const { width: windowWidth } = useWindowInfo();
-  const ref = useRef(null);
-  const [width, setWidth] = useState(0);
+  const ref = useRef<HTMLDivElement>(null);
+  const [width, setWidth] = useState<any>(0);
 
   useEffect(() => {
     setWidth(ref?.current?.offsetWidth);
