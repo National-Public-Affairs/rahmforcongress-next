@@ -19,10 +19,10 @@
 html,body {
   max-width: 100vw;
   overflow-x: hidden;
+  background: rgb(49,18,69);
+  background: linear-gradient(4deg, rgba(49,18,69,1) 0%, rgba(82,28,117,1) 100%);
 }
 
 body {
-  background: rgb(49,18,69);
-  background: linear-gradient(4deg, rgba(49,18,69,1) 0%, rgba(82,28,117,1) 100%);
   font-family: 'freight-sans-compressed-pro', system-ui, Helvetica, Arial, sans-serif;
 }
