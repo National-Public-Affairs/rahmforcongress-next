@@ -132,3 +132,9 @@
     transform: translate(0, -50%);
   }
 }
+
+@include extra-small-break {
+  .backgroundMedia {
+    width: 95%;
+  }
+}
