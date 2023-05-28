@@ -43,6 +43,11 @@ $grid-overflow: base(6);
 $gutter-xxl: base(12);
 $gutter-xl: base(7);
 
+@mixin maxWidth {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
 //////////////////////////////
 // TRANSITIONS
 //////////////////////////////
