@@ -1,11 +1,11 @@
-import type { NavItem, SocialLink } from './fields';
+import type { NavItemType, SocialLinkType } from './fields';
 
-export type Header = {
+export type HeaderType = {
   globalType: 'header';
-  navItems: NavItem[];
+  navItems: NavItemType[];
 }
 
-export type Social = {
+export type SocialType = {
   globalType: 'social-media';
-  links: SocialLink[];
+  links: SocialLinkType[];
 }
