@@ -80,12 +80,12 @@ const Header: React.FC<Props> = ({ header, social }) => {
             <Cell cols={3}>
               {
                 social.globalType === 'social-media' && social.links?.map((socialItem) => (
-                  <div key={socialItem.id}>
+                  <div key={socialItem.id} className={classes.socialOption}>
                     <a
                       href={socialItem.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={classes.secondaryNavItem}
+                      className={classes.socialOption}
                     >
                       {socialItem.label}
                     </a>
