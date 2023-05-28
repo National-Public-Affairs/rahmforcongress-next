@@ -21,18 +21,18 @@
   line-height: base(4);
 }
 
-h1 {
+.h1 {
   @include h1;
 }
 
 @mixin h2 {
   @include headingWeight;
   margin: base(2) 0;
-  font-size: base(4.25);
+  font-size: base(4.65);
   line-height: base(5);
 }
 
-h2 {
+.h2 {
   @include h2;
 }
 
@@ -43,66 +43,147 @@ h2 {
   margin: base(2) 0 base(1.5);
 }
 
-h3 {
+.h3 {
   @include h3;
 }
 
+@mixin h4 {
+  @include headingWeight;
+  font-size: base(2.75);
+  line-height: base(3.25);
+  margin: base(1.5) 0;
+}
+
+.h4 {
+  @include h4;
+}
+
+@mixin h5 {
+  @include headingWeight;
+  font-size: base(1.75);
+  line-height: base(2);
+  margin: base(1.5) 0;
+}
+
+.h5 {
+  @include h5;
+}
+
+@mixin h6 {
+  @include headingWeight;
+  font-size: base(1);
+  line-height: base(1.75);
+  margin: base(1.5) 0;
+}
+
+.h6 {
+  @include h6;
+}
+
 @include large-break {
-  h1 {
+  .h1 {
     font-size: base(5);
   }
 
-  h2 {
+  .h2 {
     font-size: base(3.25);
   }
 
-  h3 {
+  .h3 {
     font-size: base(2.25);
+  }
+
+  .h4 {
+    font-size: base(1.75);
+  }
+
+  .h5 {
+    font-size: base(1);
+  }
+
+  .h6 {
+    font-size: base(0.75);
   }
 }
 
 @include mid-break {
-  h1 {
+  .h1 {
     font-size: base(6);
   }
 
-  h2 {
+  .h2 {
     font-size: base(4.25);
   }
 
-  h3 {
+  .h3 {
     font-size: base(2.75);
+  }
+
+  .h4 {
+    font-size: base(2);
+  }
+
+  .h5 {
+    font-size: base(1.25);
+  }
+
+  .h6 {
+    font-size: base(0.85);
   }
 }
 
 @include small-break {
-  h1 {
+  .h1 {
     font-size: base(4);
     line-height: base(3);
   }
 
-  h2 {
+  .h2 {
     font-size: base(2.25);
     line-height: base(1.25);
   }
 
-  h3 {
+  .h3 {
     font-size: base(1.25);
+  }
+
+  .h4 {
+    font-size: base(1);
+  }
+
+  .h5 {
+    font-size: base(0.85);
+  }
+
+  .h6 {
+    font-size: base(0.6);
   }
 }
 
 @include extra-small-break {
-  h1 {
+  .h1 {
     font-size: base(3);
     line-height: base(2);
   }
 
-  h2 {
+  .h2 {
     font-size: base(1.25);
     line-height: base(0.5);
   }
 
-  h3 {
+  .h3 {
     font-size: base(0.85);
+  }
+
+  .h4 {
+    font-size: base(0.75);
+  }
+
+  .h5 {
+    font-size: base(0.5);
+  }
+
+  .h6 {
+    font-size: base(0.25);
   }
 }
