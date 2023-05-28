@@ -35,7 +35,7 @@ const Head: React.FC<Props> = ({ title, description, ogImage, keywords }) => {
       <link
         rel="icon"
         type="image/x-icon"
-        href="/favicon.svg"
+        href="/favicon.ico"
       />
       <meta
         name="description"
