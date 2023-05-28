@@ -4,3 +4,105 @@
   height: 100%;
   margin-top: $header-height;
 }
+
+@mixin headingWeight {
+  font-weight: 700;
+  font-style: normal;
+}
+
+@mixin bodyWeight {
+  font-weight: 400;
+}
+
+@mixin h1 {
+  @include headingWeight;
+  margin: 0 0 base(2);
+  font-size: base(6);
+  line-height: base(4);
+}
+
+h1 {
+  @include h1;
+}
+
+@mixin h2 {
+  @include headingWeight;
+  margin: base(2) 0;
+  font-size: base(4.25);
+  line-height: base(5);
+}
+
+h2 {
+  @include h2;
+}
+
+@mixin h3 {
+  @include headingWeight;
+  font-size: base(3.5);
+  line-height: base(4);
+  margin: base(2) 0 base(1.5);
+}
+
+h3 {
+  @include h3;
+}
+
+@include large-break {
+  h1 {
+    font-size: base(5);
+  }
+
+  h2 {
+    font-size: base(3.25);
+  }
+
+  h3 {
+    font-size: base(2.25);
+  }
+}
+
+@include mid-break {
+  h1 {
+    font-size: base(6);
+  }
+
+  h2 {
+    font-size: base(4.25);
+  }
+
+  h3 {
+    font-size: base(2.75);
+  }
+}
+
+@include small-break {
+  h1 {
+    font-size: base(4);
+    line-height: base(3);
+  }
+
+  h2 {
+    font-size: base(2.25);
+    line-height: base(1.25);
+  }
+
+  h3 {
+    font-size: base(1.25);
+  }
+}
+
+@include extra-small-break {
+  h1 {
+    font-size: base(3);
+    line-height: base(2);
+  }
+
+  h2 {
+    font-size: base(1.25);
+    line-height: base(0.5);
+  }
+
+  h3 {
+    font-size: base(0.85);
+  }
+}
