@@ -1,0 +1,79 @@
+@import '../../styles/base.module.scss';
+
+.wrap {
+  position: relative;
+  z-index: 1;
+  @include maxWidth;
+  margin: base(5) 0 0 0;
+  color: $user-white;
+}
+
+.cta {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -10;
+  background-color: $user-dark-purple;
+  @include grid-center-parent;
+}
+
+.polygon {
+  @include grid-center-child;
+  height: 175%;
+}
+
+.optionsWrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  gap: base(3);
+  color: $user-white;
+}
+
+.donationOpt {
+  @include grid-center-parent;
+  min-width: base(5.5);
+}
+
+.donationLink {
+  @include grid-center-child;
+  z-index: 1;
+  text-decoration: none;
+  color: $user-white;
+  &::before {
+    content: '$'
+  }
+}
+
+.optPolygon {
+  @include grid-center-child;
+}
+
+@include large-break {
+  .polygon {
+    height: 100%;
+  }
+}
+
+@include small-break {
+  .polygon {
+    height: 50%;
+  }
+
+  .optionsWrapper {
+    flex-flow: row wrap;
+  }
+}
+
+@include extra-small-break {
+  .polygon {
+    height: 60%;
+  }
+}
