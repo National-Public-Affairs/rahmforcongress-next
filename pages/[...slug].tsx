@@ -5,6 +5,7 @@ import Template from '@/components/layout/Template';
 import Head from '@/components/Head';
 import Hero from '@/components/layout/PageHero';
 import { FooterType, LegalType, SocialType } from '@/types/globals';
+import RenderBlocks from '@/components/RenderBlocks';
 
 export type Props = {
   page?: PageQueryType;
@@ -24,8 +25,7 @@ const Page: React.FC<Props> = ({
   }
 
   const pageData = page.docs[0];
-  const { meta, hero } = pageData;
-  console.log('page data', pageData);
+  const { meta, hero, layout } = pageData;
 
   return (
     <Template
@@ -44,6 +44,7 @@ const Page: React.FC<Props> = ({
         backgroundMedia={hero?.backgroundMedia}
         richText={hero?.richText}
       />
+      <RenderBlocks layout={layout} />
     </Template>
   );
 }
