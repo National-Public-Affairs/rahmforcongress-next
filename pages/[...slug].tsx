@@ -4,12 +4,21 @@ import NotFound from '@/components/NotFound';
 import Template from '@/components/layout/Template';
 import Head from '@/components/Head';
 import Hero from '@/components/layout/PageHero';
+import { FooterType, LegalType, SocialType } from '@/types/globals';
 
 export type Props = {
   page?: PageQueryType;
+  footer: FooterType;
+  socialMedia?: SocialType;
+  legal?: LegalType;
 }
 
-const Page: React.FC<Props> = ({ page }) => {
+const Page: React.FC<Props> = ({
+  page,
+  footer,
+  legal,
+  socialMedia,
+}) => {
   if (!page || page.totalPages < 1) {
     return <NotFound />;
   }
@@ -17,8 +26,13 @@ const Page: React.FC<Props> = ({ page }) => {
   const pageData = page.docs[0];
   const { meta, hero } = pageData;
   console.log('page data', pageData);
+
   return (
-    <Template>
+    <Template
+      footer={footer}
+      legal={legal}
+      socialMedia={socialMedia}
+    >
       <Head
         title={meta?.title}
         description={meta?.description}
