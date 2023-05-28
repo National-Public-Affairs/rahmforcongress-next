@@ -11,6 +11,7 @@ export type FooterType = {
   displaySocial: 'yes' | 'no';
   displayCopyright: 'yes' | 'no';
   displayDisclaimer: 'yes' | 'no';
+  displayAddress: 'yes' | 'no';
 }
 
 export type SocialType = {
