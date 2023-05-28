@@ -73,6 +73,7 @@ const Header: React.FC<Props> = ({ header, social }) => {
                       reference={navItem.link?.reference}
                       className={classes.menuOption}
                       label={navItem.link.label}
+                      url={navItem.link.url}
                     />
                   </div>
                 ))
