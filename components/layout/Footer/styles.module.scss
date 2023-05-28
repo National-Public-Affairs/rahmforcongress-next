@@ -1,0 +1,68 @@
+@import '../../../styles/base.module.scss';
+@import '../../../styles/app.module.scss';
+
+.footer {
+  position: relative;
+  overflow: hidden;
+  margin-top: base(8);
+  padding: base(4) 0;
+  background-color: $user-purple;
+  font-weight: 100;
+}
+
+.disclaimerWrapper {
+  margin: base(1);
+  display: grid;
+  grid-template: 100% / 100%;
+  text-align: center;
+}
+
+.disclaimer {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: center;
+  align-self: center;
+  margin: 0;
+  padding: base(0.5) base(1);
+  border: 3px solid $user-yellow;
+}
+
+.addressWrapper {
+  margin: base(1);
+  display: grid;
+  grid-template: 100% / 100%;
+  text-align: center;
+}
+
+.address {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: center;
+  align-self: center;
+  margin: 0;
+  padding: base(0.5) base(1);
+}
+
+.nav {
+
+}
+
+.navLink {
+
+}
+
+.navOption {
+
+}
+
+.optPolygon {
+
+}
+
+.backToTop {
+
+}
+
+.backToTopArrow {
+
+}
