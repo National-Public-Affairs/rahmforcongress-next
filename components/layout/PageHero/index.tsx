@@ -1,6 +1,7 @@
 import React from 'react';
 import type { HeroType } from '@/types/fields';
 import HeroWithMedia from './WithMedia';
+import MinimalPageHero from './Minimal';
 import { ShowAfterFirstRender } from '@/components/ShowAfterFirstRender';
 import classes from './styles.module.scss';
 
@@ -25,7 +26,11 @@ const Hero: React.FC<HeroType> = ({
   }
 
   return (
-    <div>minimal hero</div>
+    <ShowAfterFirstRender>
+      <MinimalPageHero
+        content={richText}
+      />
+    </ShowAfterFirstRender>
   );
 };
 
