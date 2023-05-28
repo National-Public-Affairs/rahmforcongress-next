@@ -1,6 +1,6 @@
-import type { Header, Social } from '@/types/globals';
+import type { HeaderType, SocialType } from '@/types/globals';
 
 export type Props = {
-  header: Header;
-  social: Social;
+  header: HeaderType;
+  social: SocialType;
 }
