@@ -55,7 +55,7 @@ const Header: React.FC<Props> = ({ header, social }) => {
         className={classes.menu}
       >
         <GridContainer>
-          <Grid className={classes.navLinks}>
+          <Grid className={classes.menuOptions}>
             <Cell
               cols={8}
               htmlElement="nav"
