@@ -1,0 +1,25 @@
+@import '../../../styles/app.module.scss';
+
+.text {
+  @include h1;
+}
+
+@include mid-break {
+  .text {
+    font-size: base(1);
+  }
+}
+
+@include small-break {
+  .text {
+    font-size: base(4);
+    line-height: base(3);
+  }
+}
+
+@include extra-small-break {
+  .text {
+    font-size: base(3);
+    line-height: base(2);
+  }
+}
