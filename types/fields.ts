@@ -20,3 +20,23 @@ export type SocialLinkType = {
   url: string;
   label: string;
 }
+
+export type MediaType = {
+  id: string;
+  alt: string;
+  mimeType: string;
+  url: string;
+}
+
+export type MetaType = {
+  title?: string;
+  description?: string;
+  image?: MediaType;
+}
+
+export type HeroType = {
+  type: 'withMedia' | 'minimal';
+  foregroundMedia?: MediaType;
+  backgroundMedia?: MediaType;
+  richText: any;
+}
