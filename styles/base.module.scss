@@ -119,3 +119,18 @@ $box-shadow: 0 0 1.9px rgba(0, 0, 0, 0.028), 0 0 4.6px rgba(0, 0, 0, 0.04), 0 0 
     @content;
   }
 }
+
+//////////////////////////////
+// CSS GRID
+//////////////////////////////
+@mixin grid-center-parent {
+  display: grid;
+  grid-template: 100% / 100%;
+}
+
+@mixin grid-center-child {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: center;
+  align-self: center;
+}
