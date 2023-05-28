@@ -18,3 +18,13 @@ export const baseStyling = {
   baselinePX: 20,
   base: (multiplier = 1): string => `${(baseStyling.baselinePX / baseStyling.htmlFontSize) * multiplier}rem`,
 };
+
+export const colors = {
+  purple: '#521C75',
+  darkPurple: '#311245',
+  yellow: '#F0A329',
+  white: '#FFFFFF',
+  gray: '#8F8F8F',
+};
+
+export type Color = 'purple' | 'darkPurple' | 'yellow' | 'white' | 'gray';
