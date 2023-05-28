@@ -17,10 +17,6 @@ const Header: React.FC<Props> = ({ header, social }) => {
   const { isModalOpen, toggleModal } = useModal();
   const menuActive = isModalOpen('menu');
 
-  if (header.globalType !== 'header') {
-    return 'Requested data not found'
-  }
-
   return (
     <header className={classes.header}>
       <div className={classes.headerContent}>
@@ -39,11 +35,8 @@ const Header: React.FC<Props> = ({ header, social }) => {
                 type={navItem.link.type}
                 reference={navItem.link?.reference}
                 className={classes.navOption}
-              >
-                <h5>
-                  {navItem.label}
-                </h5>
-              </CMSLink>
+                label={navItem.link.label}
+              />
             ))
           }
         </div>
@@ -69,19 +62,18 @@ const Header: React.FC<Props> = ({ header, social }) => {
             >
               {
                 header?.navItems.map((navItem, idx) => (
-                  <CMSLink
+                  <div
                     key={navItem.id}
-                    type={navItem.link.type}
-                    reference={navItem.link?.reference}
-                    className={classes.primaryNavItem}
+                    style={{ marginTop: idx === 0 ? 0 : undefined }}
+                    onClick={() => toggleModal(menuSlug)}
                   >
-                    <h3
-                      style={{ marginTop: idx === 0 ? 0 : undefined }}
-                      onClick={() => toggleModal(menuSlug)}
-                    >
-                      {navItem.label}
-                    </h3>
-                  </CMSLink>
+                    <CMSLink
+                      type={navItem.link.type}
+                      reference={navItem.link?.reference}
+                      className={classes.primaryNavItem}
+                      label={navItem.link.label}
+                    />
+                  </div>
                 ))
               }
             </Cell>
