@@ -22,6 +22,7 @@
   padding: base(4) 0;
   background-color: $user-purple;
   font-weight: 100;
+  font-size: base(0.75);
 }
 
 .disclaimerWrapper {
@@ -136,7 +137,16 @@
 }
 
 @include extra-small-break {
+  .footer {
+    font-size: base(0.5);
+  }
+
   .nav {
     flex-flow: row wrap;
+    gap: base(0.55);
+  }
+
+  .optPolygon {
+    width: 80%;
   }
 }
