@@ -1,0 +1,105 @@
+@import '../../../styles/base.module.scss';
+
+.header {
+  padding: base(1) base(2);
+  background-color: $user-purple;
+  z-index: $zindex-header;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-shadow: $box-shadow;
+}
+
+.headerContent {
+  max-width: $breakpoint-l-width;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  pointer-events: all;
+}
+
+.navOptions {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: base(3);
+  text-transform: uppercase;
+}
+
+.navOption {
+  color: $user-white;
+  text-decoration: none;
+  box-shadow: $box-shadow;
+}
+
+.navOption:hover {
+  transition: all $transition-default ease-in-out;
+  color: $user-yellow;
+  box-shadow: 0px base(0.5) 0px 0px rgba(240, 163, 41, 1);
+}
+
+.navOption:active {
+  color: $user-dark-purple;
+}
+
+.menuButton {
+  pointer-events: all;
+  background-color: $user-dark-purple;
+  transition: all $transition-default ease-in-out;
+  width: base(3);
+  height: base(3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  border: 0;
+  box-shadow: inset 0 0 0 0 $user-dark-purple;
+  cursor: pointer;
+}
+
+.menuButton.active {
+  box-shadow: inset 0 0 0 3px $user-white;
+}
+
+.menu {
+  top: 0;
+  left: 0;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: $header-height 0 0;
+  border: 0;
+  background-color: $user-yellow;
+}
+
+@include mid-break {
+  .header {
+    padding: base(1);
+    pointer-events: none;
+  }
+
+  .menu {
+    overflow-y: auto;
+    padding: $header-height base(1.5) 0;
+  }
+}
+
+@include large-break {
+  .navOptions {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1120px) {
+  .menuButton {
+    display: none;
+  }
+}
