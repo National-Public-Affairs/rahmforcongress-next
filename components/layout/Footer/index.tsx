@@ -94,6 +94,32 @@ const Footer: React.FC<Props> = ({
               </Cell>
             )
           }
+          {/* social media */}
+          {
+            footer.displaySocial === 'yes' && (
+              <Cell
+                cols={12}
+                colsM={8}
+              >
+                <div className={classes.socialWrapper}>
+                  {
+                    socialMedia
+                    && socialMedia.links.length > 0
+                    && socialMedia.links.map((item) => (
+                      <CMSLink
+                        key={item.id}
+                        type='custom'
+                        label={item.label}
+                        newTab
+                        url={item.url}
+                        className={`${classes.social} ${typeStyles.h6}`}
+                      />
+                    ))
+                  }
+                </div>
+              </Cell>
+            )
+          }
           {/* copyright */}
           {
             footer.displayCopyright === 'yes' && (

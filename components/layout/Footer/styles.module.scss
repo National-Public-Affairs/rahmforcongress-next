@@ -87,8 +87,21 @@
   transform: translate(0, 25%);
 }
 
-.social {
+.socialWrapper {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  gap: base(1.5);
+}
 
+.social {
+  text-decoration: none;
+  color: $user-white;
+  transition: color $transition-default ease-in-out;
+  &:hover {
+    color: $user-yellow;
+  }
 }
 
 .coprightWrapper {
