@@ -35,7 +35,7 @@
 .navOption {
   color: $user-white;
   text-decoration: none;
-  box-shadow: $box-shadow;
+  box-shadow: 0 0 0 0 rgba(240, 163, 41, 1);
 }
 
 .navOption:hover {
@@ -90,15 +90,13 @@
     overflow-y: auto;
     padding: $header-height base(1.5) 0;
   }
-}
 
-@include large-break {
   .navOptions {
     display: none;
   }
 }
 
-@media screen and (min-width: 1120px) {
+@media screen and (min-width: 1025px) {
   .menuButton {
     display: none;
   }
