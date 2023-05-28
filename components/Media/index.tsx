@@ -1,5 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
-import Image from 'next/image';
 import type { MediaType } from '@/types/fields';
 import masks from '../graphics/Polygons/masks';
 import classes from './styles.module.scss';
@@ -16,6 +16,10 @@ const Media: React.FC<Props> = ({
   clipMask,
   url,
 }) => {
+  let altData = 'Rahm for Congress';
+  if (alt) {
+    altData = alt;
+  }
   if (mimeType.includes('video')) {
     return (
       <div className={className}>
@@ -35,10 +39,11 @@ const Media: React.FC<Props> = ({
   if (clipMask === 'one') {
     return (
       <div className={className}>
-        <Image
+        <img
           className={classes.media}
           src={url}
-          alt={alt}
+          alt={altData}
+          width={500}
           style={{
             clipPath: masks.maskOne,
           }}
@@ -50,10 +55,10 @@ const Media: React.FC<Props> = ({
   if (clipMask === 'two') {
     return (
       <div className={className}>
-        <Image
+        <img
           className={classes.media}
           src={url}
-          alt={alt}
+          alt={altData}
           style={{
             clipPath: masks.maskTwo,
           }}
@@ -64,10 +69,11 @@ const Media: React.FC<Props> = ({
 
   return (
     <div className={className}>
-      <Image
+      <img
         className={classes.media}
         src={url}
-        alt={alt}
+        width={500}
+        alt={altData}
       />
     </div>
   );
