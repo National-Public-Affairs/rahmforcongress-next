@@ -82,6 +82,18 @@
   background-color: $user-yellow;
 }
 
+.menuOptions {
+  @include h4;
+}
+
+.menuOption {
+  color: $user-white;
+}
+
+.menuOption:active {
+  color: $user-dark-purple;
+}
+
 @include mid-break {
   .header {
     padding: base(1);
