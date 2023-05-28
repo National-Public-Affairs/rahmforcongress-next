@@ -17,7 +17,10 @@ const DonationBlock: React.FC<Props> = ({
   options,
 }) => (
   <Fragment>
-    <div className={classes.wrap}>
+    <div
+      className={classes.wrap}
+      style={{ backgroundColor: colors[backgroundColor]}}
+    >
       <GridContainer>
         <Grid>
           <Cell className={classes.cta}>
