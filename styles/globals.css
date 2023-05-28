@@ -31,5 +31,5 @@ html {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'freight-sans-compressed-pro', system-ui, Helvetica, Arial, sans-serif;
+  font-family: 'freight-sans-compressed-pro', Poppins, system-ui, Helvetica, Arial, sans-serif;
 }
