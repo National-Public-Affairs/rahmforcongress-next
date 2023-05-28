@@ -22,8 +22,8 @@ export type SocialLinkType = {
 }
 
 export type MediaType = {
-  id: string;
-  alt: string;
+  id?: string;
+  alt?: string;
   mimeType: string;
   url: string;
 }
@@ -36,7 +36,12 @@ export type MetaType = {
 
 export type HeroType = {
   type: 'withMedia' | 'minimal';
+  richText: any;
   foregroundMedia?: MediaType;
   backgroundMedia?: MediaType;
+};
+
+export type MinimalHeroType = {
+  type: 'minimal';
   richText: any;
 }
