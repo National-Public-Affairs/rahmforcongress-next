@@ -5,9 +5,20 @@
   margin-top: $header-height;
 }
 
+.link {
+  margin: 0;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+///////////////////
+// TYPE
+///////////////////
 @mixin headingWeight {
   font-weight: 700;
   font-style: normal;
+  text-transform: uppercase;
+  font-family: 'freight-sans-compressed-pro', Poppins, system-ui, Helvetica, Arial, sans-serif;
 }
 
 @mixin bodyWeight {
