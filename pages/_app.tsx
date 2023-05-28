@@ -1,4 +1,3 @@
-import '@/styles/globals.css';
 import App from 'next/app';
 import { ModalProvider } from '@faceless-ui/modal';
 import { WindowInfoProvider } from '@faceless-ui/window-info';
@@ -6,6 +5,8 @@ import { GridProvider } from '@faceless-ui/css-grid';
 import { breakpoints, zIndex, baseStyling } from '@/styles/styles';
 import type { HeaderType, SocialType } from '@/types/globals';
 import Header from '@/components/layout/Header';
+import '@/styles/globals.css';
+import '../styles/app.scss';
 
 type AppProps = {
   pageProps: unknown;
@@ -61,6 +62,12 @@ function MyApp(appProps: AppProps): React.ReactElement {
           <div className="app">
             <Header header={header} social={socialMedia} />
             {/* <Component {...pageProps}/> */}
+            <h1>testing an h1</h1>
+            <h2>testing an h2</h2>
+            <h3>testing an h3</h3>
+            <h4>testing an h4</h4>
+            <h5>testing an h5</h5>
+            <h6>testing an h6</h6>
           </div>
         </GridProvider>
       </ModalProvider>
