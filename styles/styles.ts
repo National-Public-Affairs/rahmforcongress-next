@@ -25,6 +25,7 @@ export const colors = {
   yellow: '#F0A329',
   white: '#FFFFFF',
   gray: '#8F8F8F',
+  none: 'rgba(0,0,0,0)',
 };
 
-export type Color = 'purple' | 'darkPurple' | 'yellow' | 'white' | 'gray';
+export type Color = 'purple' | 'darkPurple' | 'yellow' | 'white' | 'gray' | 'none';
