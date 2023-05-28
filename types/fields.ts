@@ -1,4 +1,4 @@
-export type Link = {
+export type LinkType = {
   type: "reference" | "custom";
   reference?: {
     value: {
@@ -10,12 +10,12 @@ export type Link = {
   url?: string;
 }
 
-export type NavItem = {
+export type NavItemType = {
   id: string;
-  link: Link;
+  link: LinkType;
 }
 
-export type SocialLink = {
+export type SocialLinkType = {
   id: string;
   url: string;
   label: string;
