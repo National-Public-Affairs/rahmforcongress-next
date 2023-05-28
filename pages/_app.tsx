@@ -3,17 +3,23 @@ import { ModalContainer, ModalProvider } from '@faceless-ui/modal';
 import { WindowInfoProvider } from '@faceless-ui/window-info';
 import { GridProvider } from '@faceless-ui/css-grid';
 import { breakpoints, zIndex, baseStyling } from '@/styles/styles';
-import type { HeaderType, SocialType } from '@/types/globals';
+import type { FooterType, HeaderType, LegalType, SocialType } from '@/types/globals';
 import Header from '@/components/layout/Header';
 import '@/styles/globals.css';
-import '../styles/app.scss';
+import classes from '../styles/app.module.scss';
 
 type AppProps = {
-  pageProps: unknown;
-  Component: React.FC;
+  pageProps: any;
+  Component: React.FC<{
+    footer: FooterType;
+    socialMedia: any;
+    legal: any;
+  }>;
 } & {
   header: HeaderType;
   socialMedia: SocialType;
+  footer: FooterType;
+  legal: LegalType;
 }
 
 function MyApp(appProps: AppProps): React.ReactElement {
@@ -21,7 +27,9 @@ function MyApp(appProps: AppProps): React.ReactElement {
     Component,
     pageProps,
     header,
+    footer,
     socialMedia,
+    legal,
   } = appProps;
 
   return (
@@ -59,15 +67,14 @@ function MyApp(appProps: AppProps): React.ReactElement {
             xl: 12,
           }}
         >
-          <div className="app">
+          <div className={classes.app}>
             <Header header={header} social={socialMedia} />
-            {/* <Component {...pageProps}/> */}
-            <h1 className="h1">testing an h1</h1>
-            <h2 className="h2">testing an h2</h2>
-            <h3 className="h3">testing an h3</h3>
-            <h4 className="h4">testing an h4</h4>
-            <h5 className="h5">testing an h5</h5>
-            <h6 className="h6">testing an h6</h6>
+            <Component
+              {...pageProps}
+              footer={footer}
+              socialMedia={socialMedia}
+              legal={legal}
+            />
           </div>
         </GridProvider>
         <ModalContainer />
@@ -85,8 +92,7 @@ MyApp.getInitialProps = async (appContext: any) => {
     fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/globals/social-media`).then((res) => res.json()),
     fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/globals/legal`).then((res) => res.json()),
   ]);
-  console.log('header data returned', header.navItems);
-  console.log('social data returned', socialMedia);
+
   return {
     ...appProps,
     header,
