@@ -167,23 +167,27 @@
   }
 
   .h2 {
-    font-size: base(1.25);
-    line-height: base(0.5);
+    font-size: base(2.5);
+    line-height: base(1.75);
   }
 
   .h3 {
-    font-size: base(0.85);
+    font-size: base(2);
+    line-height: base(1.5);
   }
 
   .h4 {
-    font-size: base(0.75);
+    font-size: base(1.5);
+    line-height: base(1.25);
   }
 
   .h5 {
-    font-size: base(0.5);
+    font-size: base(1);
+    line-height: base(0.75);
   }
 
   .h6 {
-    font-size: base(0.25);
+    font-size: base(0.7);
+    line-height: base(0.35);
   }
 }
