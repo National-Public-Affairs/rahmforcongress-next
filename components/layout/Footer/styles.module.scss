@@ -1,6 +1,20 @@
 @import '../../../styles/base.module.scss';
 @import '../../../styles/app.module.scss';
 
+@mixin grid {
+  display: grid;
+  grid-template: 100% / 100%;
+}
+
+@mixin alignment {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: center;
+  align-self: center;
+  margin: 0;
+  padding: base(0.5) base(1);
+}
+
 .footer {
   position: relative;
   overflow: hidden;
@@ -12,57 +26,117 @@
 
 .disclaimerWrapper {
   margin: base(1);
-  display: grid;
-  grid-template: 100% / 100%;
+  @include grid;
   text-align: center;
 }
 
 .disclaimer {
-  grid-column: 1;
-  grid-row: 1;
-  justify-self: center;
-  align-self: center;
-  margin: 0;
-  padding: base(0.5) base(1);
+  @include alignment;
   border: 3px solid $user-yellow;
 }
 
 .addressWrapper {
   margin: base(1);
-  display: grid;
-  grid-template: 100% / 100%;
+  @include grid;
   text-align: center;
 }
 
 .address {
+  @include alignment;
+}
+
+.nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  gap: base(3);
+  color: $user-white;
+}
+
+.navLinkWrapper {
+  @include grid;
+  min-width: base(5.5);
+  text-decoration: none;
+}
+
+.navOption {
+  z-index: 1;
   grid-column: 1;
   grid-row: 1;
   justify-self: center;
   align-self: center;
-  margin: 0;
-  padding: base(0.5) base(1);
-}
-
-.nav {
-
-}
-
-.navLink {
-
-}
-
-.navOption {
-
+  text-transform: uppercase;
+  color: $user-white;
+  transition: color $transition-default ease-in-out;
+  &:hover {
+    color: $user-yellow;
+  }
 }
 
 .optPolygon {
+  z-index: 0;
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: center;
+  align-self: center;
+  width: 110%;
+  transform: translate(0, 25%);
+}
 
+.social {
+
+}
+
+.coprightWrapper {
+  margin: base(1);
+  @include grid;
+}
+
+.copyright {
+  @include alignment;
+  text-align: center;
 }
 
 .backToTop {
-
+  position: absolute;
+  z-index: 3;
+  right: base(2);
+  bottom: base(2);
+  padding: base(1);
+  border: 0;
+  border-radius: 100%;
+  background-color: $user-dark-purple;
+  box-shadow: none;
+  transition: all $transition-default ease-in-out;
+  cursor: pointer;
+  &:active {
+    outline: 0;
+  }
+  &:focus {
+    outline: 0;
+  }
+  &:hover {
+    opacity: 0.95;
+    box-shadow: inset 0 0 0 3px $user-white;
+  }
 }
 
 .backToTopArrow {
+  height: base(3);
+  transform: rotate(-90deg);
+}
 
+@include mid-break {
+  .backToTop {
+    display: none;
+  }
+}
+
+@include extra-small-break {
+  .nav {
+    flex-flow: row wrap;
+  }
 }
