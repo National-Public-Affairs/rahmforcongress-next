@@ -10,6 +10,7 @@ import CMSLink from '../../Link';
 import PolygonFive from '../../graphics/Polygons/PolygonFive';
 import { colors } from '@/styles/styles';
 import classes from './styles.module.scss';
+import typeStyles from '../../../styles/app.module.scss';
 
 type Props = {
   footer: FooterType;
@@ -58,7 +59,7 @@ const Footer: React.FC<Props> = ({
               footer.displayAddress === 'yes' && (
                 <div className={classes.addressWrapper}>
                   <p className={classes.address}>
-                    {legal.address}
+                    {legal?.address}
                   </p>
                 </div>
               )
@@ -66,14 +67,32 @@ const Footer: React.FC<Props> = ({
           </Cell>
           {/* nav options */}
           {
-            (Array.isArray(footer?.nav) && footer.nav.length) > 0 && (
+            (Array.isArray(footer?.navItems) && footer.navItems.length > 0) && (
               <Cell
                 cols={12}
                 colsM={8}
                 className={classes.nav}
               >
                 {
-                  footer.nav.map(({ link }) => {
+                  footer.navItems.map((item) => (
+                    <div className={classes.navLinkWrapper} key={item.id}>
+                      <CMSLink
+                        type={item.link.type}
+                        reference={item.link.reference}
+                        label={item.link.label}
+                        newTab={item.link.newTab}
+                        url={item.link.url}
+                        className={`${classes.navOption} ${typeStyles.h5}`}
+                      />
+                      <PolygonFive
+                        fillColor={colors.darkPurple}
+                        className={classes.optPolygon}
+                      />
+                    </div>
+                  ))
+                }
+                {/* {
+                  footer.navItems.map(({ link }) => {
                     if (link.type === 'custom') {
                       return (
                         <CMSLink
@@ -119,7 +138,7 @@ const Footer: React.FC<Props> = ({
                       </CMSLink>
                     );
                   })
-                }
+                } */}
               </Cell>
             )
           }
@@ -136,7 +155,7 @@ const Footer: React.FC<Props> = ({
                     {' '}
                     {new Date().getFullYear()}
                     {' '}
-                    {legal.copyright}
+                    {legal?.copyright}
                   </p>
                 </div>
               </Cell>
