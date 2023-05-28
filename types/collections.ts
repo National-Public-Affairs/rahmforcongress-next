@@ -1,10 +1,10 @@
-import type { MetaType, HeroType } from './fields';
+import type { MetaType, HeroType, LayoutType } from './fields';
 
 export type PageType = {
   id: string;
   title: string;
   hero: HeroType;
-  layout: any; // deal with
+  layout: LayoutType[];
   slug: string;
   meta: MetaType;
   _status: 'published' | 'draft';
