@@ -1,5 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
 import React from 'react';
+import Image from 'next/image';
 import type { MediaType } from '@/types/fields';
 import masks from '../graphics/Polygons/masks';
 import classes from './styles.module.scss';
@@ -22,7 +22,7 @@ const Media: React.FC<Props> = ({
   }
   if (mimeType.includes('video')) {
     return (
-      <div className={className}>
+      <div className={`${className} ${classes.imgWrapper}`}>
         <video
           autoPlay
           muted
@@ -38,12 +38,12 @@ const Media: React.FC<Props> = ({
 
   if (clipMask === 'one') {
     return (
-      <div className={className}>
-        <img
-          className={classes.media}
+      <div className={`${className} ${classes.imgWrapper}`}>
+        <Image
+          className={`${className} ${classes.image}`}
           src={url}
           alt={altData}
-          width={500}
+          fill
           style={{
             clipPath: masks.maskOne,
           }}
@@ -54,11 +54,12 @@ const Media: React.FC<Props> = ({
 
   if (clipMask === 'two') {
     return (
-      <div className={className}>
-        <img
-          className={classes.media}
+      <div className={`${className} ${classes.imgWrapper}`}>
+        <Image
+          className={`${className} ${classes.image}`}
           src={url}
           alt={altData}
+          fill
           style={{
             clipPath: masks.maskTwo,
           }}
@@ -68,12 +69,12 @@ const Media: React.FC<Props> = ({
   }
 
   return (
-    <div className={className}>
-      <img
-        className={classes.media}
+    <div className={`${className} ${classes.imgWrapper}`}>
+      <Image
+        className={`${className} ${classes.image}`}
         src={url}
-        width={500}
         alt={altData}
+        fill
       />
     </div>
   );

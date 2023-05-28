@@ -41,6 +41,7 @@ const HeroWithMedia: React.FC<Props> = ({
                   alt={foregroundMedia?.alt}
                   mimeType={foregroundMedia?.mimeType}
                   url={foregroundMedia?.url}
+                  className={classes.foregroundMedia}
                 />
               )
             }

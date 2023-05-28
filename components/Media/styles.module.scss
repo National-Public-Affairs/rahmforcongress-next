@@ -2,3 +2,17 @@
   max-width: 100%;
   width: 100%;
 }
+
+.imageWrapper {
+  width: 100%;
+  & > div {
+    position: unset !important;
+  }
+}
+
+.image {
+  object-fit: contain;
+  width: 100% !important;
+  position: relative !important;
+  height: unset !important;
+}

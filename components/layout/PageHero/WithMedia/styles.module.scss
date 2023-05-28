@@ -31,6 +31,7 @@
 
 .foregroundMedia {
   z-index: 0;
+  width: 90%;
 }
 
 .richText > * {
@@ -65,14 +66,13 @@
   right: 0;
   width: 75%;
   z-index: -10;
-  opacity: 0.2;
   @include keyframes(twist) {
     from {
       opacity: 0;
       transform: rotate(5deg) scale(1.1);
     }
     to {
-      opacity: 0.2;
+      opacity: 0.6;
       transform: none;
     }
   }
