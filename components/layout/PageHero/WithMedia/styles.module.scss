@@ -80,6 +80,33 @@
   animation-fill-mode: both;
 }
 
+.minimalWrap {
+  position: relative;
+  z-index: 1;
+  padding: base(5) 0;
+}
+
+.minimalBg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -10;
+  background-color: $user-yellow;
+  display: grid;
+  grid-template: 100% / 100%;
+}
+
+.polygon {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: center;
+  align-self: center;
+  width: 80%;
+  height: 60%;
+}
+
 @include mid-break {
   .gridContainer {
     padding: 0 base(1);
