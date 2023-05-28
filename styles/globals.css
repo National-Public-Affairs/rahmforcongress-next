@@ -1,3 +1,5 @@
+@import url("https://use.typekit.net/gqh4siz.css");
+
 :root {
   /* color palette */
   --purple: #521C75;
@@ -22,8 +24,12 @@ html, body {
 }
 
 html {
-  font-family: 'freight-sans-compressed-pro', system-ui, Helvetica, Arial, sans-serif;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
   font-size: var(--baseline-body-size);
   line-height: var(--baseline-px)px;
   background-color: var(--dark-purple);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'freight-sans-compressed-pro', system-ui, Helvetica, Arial, sans-serif;
 }
