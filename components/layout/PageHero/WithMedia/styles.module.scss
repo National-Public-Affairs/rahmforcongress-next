@@ -78,6 +78,7 @@
   }
   @include animate(twist, 800ms, ease-in-out, 1);
   animation-fill-mode: both;
+  animation-delay: 150ms;
 }
 
 .minimalWrap {
