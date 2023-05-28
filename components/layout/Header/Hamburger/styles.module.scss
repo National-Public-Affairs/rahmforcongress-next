@@ -1,0 +1,62 @@
+@import '../../../../styles/base.module.scss';
+
+@mixin line-styles {
+  transition: all 400ms;
+  transform-origin: center;
+  stroke: $user-white;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.hamburger {
+  overflow: visible;
+  width: base(1);
+  height: base(1);
+}
+
+.line1 {
+  @include line-styles;
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.line1.active {
+  @include line-styles;
+  opacity: 0;
+  transform: translate(0, base(-0.5));
+}
+
+.line2 {
+  @include line-styles;
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+.line2.active {
+  @include line-styles;
+  transform: rotate(45deg);
+}
+
+.line3 {
+  @include line-styles;
+  opacity: 0;
+  transform: rotate(0deg);
+}
+
+.line3.active {
+  @include line-styles;
+  opacity: 1;
+  transform: rotate(-45deg);
+}
+
+.line4 {
+  @include line-styles;
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.line4.active {
+  @include line-styles;
+  opacity: 0;
+  transform: translate(0, base(0.5));
+}
