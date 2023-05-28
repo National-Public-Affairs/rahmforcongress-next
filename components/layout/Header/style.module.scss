@@ -94,6 +94,17 @@
   color: $user-dark-purple;
 }
 
+.socialOption {
+  @include h6;
+  line-height: base(0.15);
+  text-decoration: none;
+  color: $user-purple;
+}
+
+.socialOption:active {
+  color: $user-dark-purple;
+}
+
 @include mid-break {
   .header {
     padding: base(1);
