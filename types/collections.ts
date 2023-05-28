@@ -1,4 +1,5 @@
-import type { MetaType, HeroType, LayoutType } from './fields';
+import type { MetaType, HeroType } from './fields';
+import type { LayoutType } from './blocks';
 
 export type PageType = {
   id: string;
