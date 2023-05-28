@@ -70,7 +70,7 @@ const Header: React.FC<Props> = ({ header, social }) => {
                     <CMSLink
                       type={navItem.link.type}
                       reference={navItem.link?.reference}
-                      className={classes.primaryNavItem}
+                      className={classes.menuOption}
                       label={navItem.link.label}
                     />
                   </div>
