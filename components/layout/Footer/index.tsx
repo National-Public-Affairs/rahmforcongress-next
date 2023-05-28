@@ -91,54 +91,6 @@ const Footer: React.FC<Props> = ({
                     </div>
                   ))
                 }
-                {/* {
-                  footer.navItems.map(({ link }) => {
-                    if (link.type === 'custom') {
-                      return (
-                        <CMSLink
-                          key={link.label}
-                          type="custom"
-                          url={link.url}
-                          label="footerNavOption"
-                          className={classes.navLink}
-                        >
-                          <h4
-                            className={classes.navOption}
-                            onClick={backToTop}
-                          >
-                            {link.label}
-                          </h4>
-                          <PolygonFive
-                            fillColor={colors.darkPurple}
-                            className={classes.optPolygon}
-                          />
-                        </CMSLink>
-                      );
-                    }
-
-                    return (
-                      <CMSLink
-                        key={link.label}
-                        type="page"
-                        page={link.page}
-                        url={link.url}
-                        label="footerNavOption"
-                        className={classes.navLink}
-                      >
-                        <h4
-                          onClick={backToTop}
-                          className={classes.navOption}
-                        >
-                          {link.label}
-                        </h4>
-                        <PolygonFive
-                          fillColor={colors.darkPurple}
-                          className={classes.optPolygon}
-                        />
-                      </CMSLink>
-                    );
-                  })
-                } */}
               </Cell>
             )
           }
