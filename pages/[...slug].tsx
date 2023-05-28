@@ -3,6 +3,7 @@ import type { PageQueryType } from '@/types/collections';
 import NotFound from '@/components/NotFound';
 import Template from '@/components/layout/Template';
 import Head from '@/components/Head';
+import Hero from '@/components/layout/PageHero';
 
 export type Props = {
   page?: PageQueryType;
@@ -14,13 +15,20 @@ const Page: React.FC<Props> = ({ page }) => {
   }
 
   const pageData = page.docs[0];
-  console.log('page data', pageData)
+  const { meta, hero } = pageData;
+  console.log('page data', pageData);
   return (
     <Template>
       <Head
-        title={pageData?.meta?.title}
-        description={pageData?.meta?.description}
-        ogImage={pageData?.meta?.image}
+        title={meta?.title}
+        description={meta?.description}
+        ogImage={meta?.image}
+      />
+      <Hero
+        type={hero.type}
+        foregroundMedia={hero?.foregroundMedia}
+        backgroundMedia={hero?.backgroundMedia}
+        richText={hero?.richText}
       />
     </Template>
   );
