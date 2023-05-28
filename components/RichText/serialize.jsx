@@ -65,7 +65,30 @@ import typestyles from '../../styles/app.module.scss';
         // custom styling for white headline text
         if (node['rich-white-headline']) {
           text = (
-            <div 
+            <div
+              style={{ color: colors.white }}
+              className={`${typestyles.h1} ${classes.headline}`}
+            >
+              {text}
+            </div>
+          );
+        }
+
+        // custom styling for minimal yellow headline text
+        if (node['rich-minimal-purple-text']) {
+          text = (
+            <div
+              style={{ color: colors.purple }}
+              className={`${typestyles.h1} ${classes.headline}`}
+            >
+              {text}
+            </div>
+          );
+        }
+        // custom styling for minimal white headline text
+        if (node['rich-minimal-white-text']) {
+          text = (
+            <div
               style={{ color: colors.white }}
               className={`${typestyles.h1} ${classes.headline}`}
             >
