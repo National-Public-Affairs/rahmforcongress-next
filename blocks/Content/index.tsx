@@ -22,8 +22,12 @@ const ContentBlock: React.FC<Props> = ({
     <GridContainer>
       <Grid>
         <Cell
-          cols={8}
-          start={3}
+          cols={6}
+          start={4}
+          colsM={6}
+          startM={2}
+          colsS={8}
+          startS={1}
         >
           <RichText content={richText} />
         </Cell>

@@ -1,0 +1,12 @@
+@import '../../styles/base.module.scss';
+
+.wrapper {
+  padding: base(8) 0;
+  color: $user-white;
+}
+
+@include small-break {
+  .wrapper {
+    padding: base(2) 0;
+  }
+}
