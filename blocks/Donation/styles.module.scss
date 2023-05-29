@@ -4,11 +4,12 @@
   position: relative;
   z-index: 1;
   @include maxWidth;
-  margin: base(5) 0 0 0;
+  margin: base(5) auto 0 auto;
   color: $user-white;
 }
 
 .cta {
+  margin: auto;
   text-transform: uppercase;
   text-align: center;
 }
