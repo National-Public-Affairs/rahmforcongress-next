@@ -22,8 +22,12 @@ const CtaBlock: React.FC<Props> = ({
     <GridContainer className={classes.cta}>
       <Grid>
         <Cell
-          cols={5}
-          start={3}
+          cols={4}
+          start={5}
+          colsL={5}
+          startM={3}
+          colsS={8}
+          startS={2}
         >
           <RichText content={richText} />
         </Cell>

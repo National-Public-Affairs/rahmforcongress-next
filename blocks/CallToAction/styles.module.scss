@@ -13,4 +13,11 @@
   @include grid-center-child;
   z-index: 0;
   width: 80%;
+  max-width: 1000px;
+}
+
+@include extra-small-break {
+  .cta {
+    padding: base(1);
+  }
 }
