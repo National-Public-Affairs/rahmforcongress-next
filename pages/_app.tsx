@@ -1,4 +1,5 @@
 import App from 'next/app';
+import { Poppins } from 'next/font/google';
 import { ModalContainer, ModalProvider } from '@faceless-ui/modal';
 import { WindowInfoProvider } from '@faceless-ui/window-info';
 import { GridProvider } from '@faceless-ui/css-grid';
@@ -21,6 +22,11 @@ type AppProps = {
   footer: FooterType;
   legal: LegalType;
 }
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: '300',
+});
 
 function MyApp(appProps: AppProps): React.ReactElement {
   const {
@@ -67,7 +73,7 @@ function MyApp(appProps: AppProps): React.ReactElement {
             xl: 12,
           }}
         >
-          <div className={classes.app}>
+          <div className={`${classes.app} ${poppins.className}`}>
             <Header header={header} social={socialMedia} />
             <Component
               {...pageProps}
