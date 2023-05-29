@@ -1,6 +1,7 @@
 import React from 'react';
 import type { LayoutType } from '@/types/blocks';
 import DonationBlock from '@/blocks/Donation';
+import ContentBlock from '@/blocks/Content';
 
 type Props = {
   layout: LayoutType[];
@@ -16,14 +17,21 @@ const RenderBlocks: React.FC<Props> = ({ layout, className }) => (
       layout.length > 0 && layout.map((block) => {
         switch (block.blockType) {
           case 'content':
-            break;
+            return (
+              <section key={block.id}>
+                <ContentBlock
+                  backgroundColor={block?.backgroundColor}
+                  richText={block?.richText}
+                />
+              </section>
+            );
           case 'donation':
             return (
-              <section>
+              <section key={block.id}>
                 <DonationBlock
                   backgroundColor={block.backgroundColor}
-                  cta={block.cta}
-                  options={block.options}
+                  cta={block?.cta}
+                  options={block?.options}
                 />
               </section>
             );
