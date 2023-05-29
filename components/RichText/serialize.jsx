@@ -168,7 +168,14 @@ const serialize = (children) =>
         );
 
       default:
-        return <div key={i}>{serialize(node.children)}</div>;
+        return (
+          <div
+            key={i}
+            className={classes.paragraph}
+          >
+            {serialize(node.children)}
+          </div>
+        );
     }
   });
 
