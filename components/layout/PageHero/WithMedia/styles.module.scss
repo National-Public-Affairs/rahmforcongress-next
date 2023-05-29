@@ -123,13 +123,17 @@
 }
 
 @include small-break {
+  .foregroundMedia {
+    width: 120%;
+  }
+
   .backgroundMedia {
     width: 95%;
   }
 
   .bg {
     bottom: 20%;
-    background: linear-gradient(180deg, rgba(82,28,117,0) 0%, rgba(49,18,69,1) 55%);
+    background: linear-gradient(180deg, rgba(82,28,117,0) 0%, rgba(49,18,69,1) 70%);
   }
 
   .cta {
@@ -138,6 +142,10 @@
 }
 
 @include extra-small-break {
+  .foregroundMedia {
+    width: 120%;
+  }
+
   .backgroundMedia {
     width: 95%;
   }
