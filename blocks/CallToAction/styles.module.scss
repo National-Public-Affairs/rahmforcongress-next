@@ -1,0 +1,16 @@
+@import '../../styles/base.module.scss';
+
+.wrapper {
+  @include grid-center-parent;
+}
+
+.cta {
+  @include grid-center-child;
+  z-index: 1;
+}
+
+.polygon {
+  @include grid-center-child;
+  z-index: 0;
+  width: 80%;
+}

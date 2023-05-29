@@ -3,6 +3,7 @@ import type { LayoutType } from '@/types/blocks';
 import DonationBlock from '@/blocks/Donation';
 import ContentBlock from '@/blocks/Content';
 import AccentMediaBlock from '@/blocks/Accent Media';
+import CtaBlock from '@/blocks/CallToAction';
 
 type Props = {
   layout: LayoutType[];
@@ -44,6 +45,16 @@ const RenderBlocks: React.FC<Props> = ({ layout, className }) => (
                   accentStyle={block.accentStyle}
                   accentSize={block.accentSize}
                   accentMedia={block.accentMedia}
+                />
+              </section>
+            );
+          case 'cta':
+            return (
+              <section key={block.id}>
+                <CtaBlock
+                  ctaBackgroundColor={block.ctaBackgroundColor ? block.ctaBackgroundColor : 'darkPurple'}
+                  styleType={block.type ? block.type : 'subtle'}
+                  richText={block.richText}
                 />
               </section>
             );

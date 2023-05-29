@@ -16,10 +16,12 @@ export type LayoutType = {
   cta?: string;
   options?: DonationOptionType[];
   backgroundColor: Color;
+  ctaBackgroundColor?: Color;
   richText?: RichTextType[];
   accentStyle?: 'one' | 'two';
   accentSize?: 'small' | 'medium' | 'large';
   accentMedia?: MediaType;
+  type?: 'bold' | 'subtle';
 };
 
 ///////////////////////
@@ -53,4 +55,13 @@ export type AccentMediaBlockType = {
   accentStyle?: 'one' | 'two';
   accentSize?: 'small' | 'medium' | 'large';
   accentMedia?: MediaType;
+}
+
+///////////////////////
+// Call-to-Action
+///////////////////////
+export type CtaBlockType = {
+  styleType: 'bold' | 'subtle';
+  ctaBackgroundColor: Color;
+  richText?: RichTextType[];
 }
