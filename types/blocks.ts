@@ -1,5 +1,5 @@
 import { Color } from "@/styles/styles";
-import { LinkType } from "./fields";
+import { LinkType, RichTextType } from "./fields";
 
 export type BlockType =
   | 'content'
@@ -11,19 +11,32 @@ export type BlockType =
 
 export type LayoutType = {
   blockType: BlockType;
-} & (DonationBlockType);
+  id: string;
+  cta?: string;
+  options?: DonationOptionType[];
+  backgroundColor: Color;
+  richText?: RichTextType[];
+}
 
 ///////////////////////
 // Donation Block
 ///////////////////////
 export type DonationBlockType = {
-  backgroundColor: Color;
-  cta: string;
-  options: DonationOptionType[];
+  backgroundColor?: Color;
+  cta?: string;
+  options?: DonationOptionType[];
 }
 
 export type DonationOptionType = {
   id: string;
   amount: number;
   link: LinkType;
+}
+
+///////////////////////
+// Content Block
+///////////////////////
+export type ContentBlockType = {
+  backgroundColor?: Color;
+  richText?: RichTextType[];
 }
