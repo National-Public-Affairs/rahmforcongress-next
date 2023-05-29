@@ -2,6 +2,7 @@ import React from 'react';
 import type { LayoutType } from '@/types/blocks';
 import DonationBlock from '@/blocks/Donation';
 import ContentBlock from '@/blocks/Content';
+import AccentMediaBlock from '@/blocks/Accent Media';
 
 type Props = {
   layout: LayoutType[];
@@ -32,6 +33,17 @@ const RenderBlocks: React.FC<Props> = ({ layout, className }) => (
                   backgroundColor={block.backgroundColor}
                   cta={block?.cta}
                   options={block?.options}
+                />
+              </section>
+            );
+          case 'accentMediaBlock':
+            return (
+              <section key={block.id}>
+                <AccentMediaBlock
+                  backgroundColor={block.backgroundColor}
+                  accentStyle={block.accentStyle}
+                  accentSize={block.accentSize}
+                  accentMedia={block.accentMedia}
                 />
               </section>
             );

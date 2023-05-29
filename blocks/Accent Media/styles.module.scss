@@ -1,0 +1,45 @@
+@import '../../styles/base.module.scss';
+
+.grid {
+  padding: 0;
+}
+
+.wrapper {
+  padding: base(5) 0;
+}
+
+.wrapper.small {
+  padding: 0;
+}
+
+.media {
+  max-width: 1000px;
+}
+
+.media.medium {
+  transform: translate(0, -15px);
+}
+
+.media.small {
+  padding: base(1) 0;
+}
+
+@include large-break {
+  .wrapper {
+    padding: 0;
+  }
+
+  .media {
+    padding: 0;
+  }
+}
+
+@include extra-small-break {
+  .wrapper {
+    padding: 0;
+  }
+
+  .media {
+    padding: 0;
+  }
+}

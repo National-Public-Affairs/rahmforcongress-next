@@ -1,5 +1,5 @@
-import { Color } from "@/styles/styles";
-import { LinkType, RichTextType } from "./fields";
+import { Color } from '@/styles/styles';
+import { LinkType, MediaType, RichTextType } from './fields';
 
 export type BlockType =
   | 'content'
@@ -7,7 +7,8 @@ export type BlockType =
   | 'cta'
   | 'formBlock'
   | 'mediaBlock'
-  | 'archive';
+  | 'archive'
+  | 'accentMediaBlock';
 
 export type LayoutType = {
   blockType: BlockType;
@@ -16,7 +17,10 @@ export type LayoutType = {
   options?: DonationOptionType[];
   backgroundColor: Color;
   richText?: RichTextType[];
-}
+  accentStyle?: 'one' | 'two';
+  accentSize?: 'small' | 'medium' | 'large';
+  accentMedia?: MediaType;
+};
 
 ///////////////////////
 // Donation Block
@@ -39,4 +43,14 @@ export type DonationOptionType = {
 export type ContentBlockType = {
   backgroundColor?: Color;
   richText?: RichTextType[];
+}
+
+///////////////////////
+// Accent Media Block
+///////////////////////
+export type AccentMediaBlockType = {
+  backgroundColor: Color;
+  accentStyle?: 'one' | 'two';
+  accentSize?: 'small' | 'medium' | 'large';
+  accentMedia?: MediaType;
 }
