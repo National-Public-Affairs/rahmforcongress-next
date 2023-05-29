@@ -118,39 +118,39 @@ const serialize = (children) =>
     switch (node.type) {
       case 'h1':
         return (
-          <h1 key={i} className={typestyles.h1}>
+          <div key={i} className={typestyles.h1}>
             {serialize(node.children)}
-          </h1>
+          </div>
         );
       case 'h2':
         return (
-          <h2 key={i} className={typestyles.h2}>
+          <div key={i} className={typestyles.h2}>
             {serialize(node.children)}
-          </h2>
+          </div>
         );
       case 'h3':
         return (
-          <h3 key={i} className={typestyles.h3}>
+          <div key={i} className={typestyles.h3}>
             {serialize(node.children)}
-          </h3>
+          </div>
         );
       case 'h4':
         return (
-          <h4 key={i} className={typestyles.h4}>
+          <div key={i} className={typestyles.h4}>
             {serialize(node.children)}
-          </h4>
+          </div>
         );
       case 'h5':
         return (
-          <h5 key={i} className={typestyles.h5}>
+          <div key={i} className={typestyles.h5}>
             {serialize(node.children)}
-          </h5>
+          </div>
         );
       case 'h6':
         return (
-          <h6 key={i} className={typestyles.h6}>
+          <div key={i} className={typestyles.h6}>
             {serialize(node.children)}
-          </h6>
+          </div>
         );
       case 'quote':
         return <blockquote key={i}>{serialize(node.children)}</blockquote>;
