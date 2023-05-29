@@ -3,7 +3,6 @@ import { Grid, Cell } from '@faceless-ui/css-grid';
 import GridContainer from '../../components/layout/GridContainer';
 import PolygonThree from '../../components/graphics/Polygons/PolygonThree';
 import PolygonFour from '../../components/graphics/Polygons/PolygonFour';
-import type { LinkType } from '@/types/fields';
 import CMSLink from '../../components/Link';
 import { colors } from '@/styles/styles';
 import classes from './styles.module.scss';
@@ -19,7 +18,7 @@ const DonationBlock: React.FC<Props> = ({
   <Fragment>
     <div
       className={classes.wrap}
-      style={{ backgroundColor: colors[backgroundColor]}}
+      style={{ backgroundColor: backgroundColor ? colors[backgroundColor] : 'transparent'}}
     >
       <GridContainer>
         <Grid>
@@ -46,7 +45,7 @@ const DonationBlock: React.FC<Props> = ({
             className={classes.optionsWrapper}
           >
             {
-              options.length > 0 && options.map((opt) => (
+              options && options.length > 0 && options.map((opt) => (
                 <div
                   key={opt.id}
                   className={classes.donationOpt}
