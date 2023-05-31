@@ -21,7 +21,7 @@ type Props = {
 
 const Head: React.FC<Props> = ({ title, description, ogImage, keywords }) => {
   const { asPath } = useRouter();
-  console.log('head data', title)
+
   const getTitle = () => {
     if (title) return title + titleSuffix;
     return defaultTitle + titleSuffix;
