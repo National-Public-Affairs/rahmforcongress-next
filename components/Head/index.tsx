@@ -51,7 +51,7 @@ const Head: React.FC<Props> = ({ title, description, ogImage, keywords }) => {
       />
       <meta
         property="og:url"
-        content={`${SERVER_URL}${asPath}`}
+        content={`${asPath}`}
       />
       <meta
         property="og:title"
