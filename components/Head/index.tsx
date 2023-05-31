@@ -6,9 +6,9 @@ import type { MediaType } from '@/types/fields';
 
 const { publicRuntimeConfig: { SERVER_URL } } = getConfig();
 
-const defaultDescription = 'Tayler Rahm for United States Congress in the great state of Minnesota';
-const defaultTitle = 'Rahm for Congress';
-const titleSuffix = ' | Payload CMS';
+const defaultDescription = 'Tayler Rahm for US Congress in Minnesota\'s MN-02';
+const defaultTitle = 'A New Generation of Leadership';
+const titleSuffix = ' | Rahm for Congress';
 const defaultOGImage = `${SERVER_URL}/images/og-image.jpg`;
 const defaultKeywords = 'United States, Congress, House of Representatives, Campaign, Rahm';
 
@@ -21,7 +21,7 @@ type Props = {
 
 const Head: React.FC<Props> = ({ title, description, ogImage, keywords }) => {
   const { asPath } = useRouter();
-
+  console.log('head data', title)
   const getTitle = () => {
     if (title) return title + titleSuffix;
     return defaultTitle + titleSuffix;
