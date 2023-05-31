@@ -84,7 +84,7 @@
 .minimalWrap {
   position: relative;
   z-index: 1;
-  padding: base(5) 15%;
+  padding: base(5) 0;
 }
 
 .minimalBg {
@@ -142,6 +142,8 @@
 }
 
 @include extra-small-break {
+  
+
   .foregroundMedia {
     width: 120%;
   }
