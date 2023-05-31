@@ -32,10 +32,6 @@ const Footer: React.FC<Props> = ({
     window.scrollTo(0, 0);
   }, []);
 
-  console.log('legal data:', legal);
-  console.log('footer data:', footer);
-  console.log('social media data:', socialMedia);
-
   return (
     <footer className={`${classes.footer} ${poppins.className}`}>
       <GridContainer>
