@@ -8,7 +8,7 @@ const { publicRuntimeConfig: { SERVER_URL } } = getConfig();
 
 const defaultDescription = 'Tayler Rahm for US Congress in Minnesota\'s MN-02';
 const defaultTitle = 'A New Generation of Leadership';
-const titleSuffix = ' | Rahm for Congress';
+const titleSuffix = ' | Rahm for Congress (MN-02)';
 const defaultOGImage = `${SERVER_URL}/images/og-image.jpg`;
 const defaultKeywords = 'United States, Congress, House of Representatives, Campaign, Rahm';
 
