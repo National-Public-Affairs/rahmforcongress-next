@@ -18,69 +18,69 @@ const serialize = (children) =>
 
       // custom styling for purple text
       if (node['rich-purple-text']) {
-        text = <div style={{ color: colors.purple }}>{text}</div>;
+        text = <span style={{ color: colors.purple }}>{text}</span>;
       }
 
       // custom styling for dark purple text
       if (node['rich-dark-purple-text']) {
-        text = <div style={{ color: colors.darkPurple }}>{text}</div>;
+        text = <span style={{ color: colors.darkPurple }}>{text}</span>;
       }
 
       // custom styling for yellow text
       if (node['rich-yellow-text']) {
-        text = <div style={{ color: colors.yellow }}>{text}</div>;
+        text = <span style={{ color: colors.yellow }}>{text}</span>;
       }
 
       // custom styling for white text
       if (node['rich-white-text']) {
-        text = <div style={{ color: colors.white }}>{text}</div>;
+        text = <span style={{ color: colors.white }}>{text}</span>;
       }
 
       // custom styling for yellow headline text
       if (node['rich-yellow-headline']) {
         text = (
-          <div
+          <span
             style={{ color: colors.yellow }}
             className={`${typestyles.h1} ${classes.headline}`}
           >
             {text}
-          </div>
+          </span>
         );
       }
 
       // custom styling for white headline text
       if (node['rich-white-headline']) {
         text = (
-          <div
+          <span
             style={{ color: colors.white }}
             className={`${typestyles.h1} ${classes.headline}`}
           >
             {text}
-          </div>
+          </span>
         );
       }
 
       // custom styling for minimal yellow headline text
       if (node['rich-minimal-purple-text']) {
         text = (
-          <div
+          <span
             style={{ color: colors.purple }}
             className={`${typestyles.h1} ${classes.headline}`}
           >
             {text}
-          </div>
+          </span>
         );
       }
 
       // custom styling for minimal white headline text
       if (node['rich-minimal-white-text']) {
         text = (
-          <div
+          <span
             style={{ color: colors.white }}
             className={`${typestyles.h1} ${classes.headline}`}
           >
             {text}
-          </div>
+          </span>
         );
       }
 
