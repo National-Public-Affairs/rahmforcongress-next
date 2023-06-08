@@ -21,7 +21,15 @@
 }
 
 .media.small {
-  padding: base(1) 0;
+  padding: 0;
+  transform: translate(15%, 10px);
+}
+
+@include extra-large-break {
+  .media.small {
+    padding: base(0.5) 0;
+    transform: translate(15%, 20px);
+  }
 }
 
 @include large-break {
@@ -29,17 +37,25 @@
     padding: 0;
   }
 
+  .media.small {
+    transform: translate(15%, 20px);
+  }
+}
+
+@include mid-break {
+  .media.small {
+    transform: translate(15%, 20px);
+  }
+}
+
+@include small-break {
   .media {
-    padding: 0;
+
   }
 }
 
 @include extra-small-break {
   .wrapper {
-    padding: 0;
-  }
-
-  .media {
     padding: 0;
   }
 }
