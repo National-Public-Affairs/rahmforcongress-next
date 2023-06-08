@@ -112,9 +112,21 @@
   height: 60%;
 }
 
+@include large-break {
+  .minimalWrap {
+    line-height: base(3);
+    padding: base(1.75) 0 base(0.5) 0;
+  }
+}
+
 @include mid-break {
   .gridContainer {
     padding: 0 base(1);
+  }
+
+  .minimalWrap {
+    line-height: base(3);
+    padding: base(1.75) 0 base(0.5) 0;
   }
 
   .backgroundMedia {
@@ -129,6 +141,7 @@
 @include small-break {
   .minimalWrap {
     line-height: base(3);
+    padding: base(1.75) 0 base(0.5) 0;
   }
 
   .foregroundMedia {
@@ -151,7 +164,7 @@
 
 @include extra-small-break {
   .minimalWrap {
-    padding: base(3) 0 base(1) 0;
+    padding: base(1.5) 0 base(0.5) 0;
   }
 
   .foregroundMedia {
