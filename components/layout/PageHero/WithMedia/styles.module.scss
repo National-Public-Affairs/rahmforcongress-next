@@ -35,7 +35,6 @@
 }
 
 .richText > * {
-  @include h1;
   @include keyframes(fade) {
     from {
       opacity: 0;
@@ -85,6 +84,11 @@
   position: relative;
   z-index: 1;
   padding: base(5) 0;
+  margin: 0;
+}
+
+.minimalText {
+  width: 80%;
 }
 
 .minimalBg {
@@ -123,6 +127,10 @@
 }
 
 @include small-break {
+  .minimalWrap {
+    line-height: base(3);
+  }
+
   .foregroundMedia {
     width: 120%;
   }
@@ -142,7 +150,9 @@
 }
 
 @include extra-small-break {
-  
+  .minimalWrap {
+    padding: base(3) 0 base(1) 0;
+  }
 
   .foregroundMedia {
     width: 120%;
