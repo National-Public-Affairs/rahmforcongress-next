@@ -4,6 +4,7 @@ import DonationBlock from '@/blocks/Donation';
 import ContentBlock from '@/blocks/Content';
 import AccentMediaBlock from '@/blocks/Accent Media';
 import CtaBlock from '@/blocks/CallToAction';
+import classes from './styles.module.scss';
 
 type Props = {
   layout: LayoutType[];
@@ -20,7 +21,10 @@ const RenderBlocks: React.FC<Props> = ({ layout, className }) => (
         switch (block.blockType) {
           case 'content':
             return (
-              <section key={block.id}>
+              <section
+                key={block.id}
+                className={classes.section}
+              >
                 <ContentBlock
                   backgroundColor={block?.backgroundColor}
                   richText={block?.richText}
@@ -29,7 +33,10 @@ const RenderBlocks: React.FC<Props> = ({ layout, className }) => (
             );
           case 'donation':
             return (
-              <section key={block.id}>
+              <section
+                key={block.id}
+                className={classes.section}
+              >
                 <DonationBlock
                   backgroundColor={block.backgroundColor}
                   cta={block?.cta}
@@ -39,7 +46,10 @@ const RenderBlocks: React.FC<Props> = ({ layout, className }) => (
             );
           case 'accentMediaBlock':
             return (
-              <section key={block.id}>
+              <section
+                key={block.id}
+                className={classes.section}
+              >
                 <AccentMediaBlock
                   backgroundColor={block.backgroundColor}
                   accentStyle={block.accentStyle}
@@ -50,7 +60,10 @@ const RenderBlocks: React.FC<Props> = ({ layout, className }) => (
             );
           case 'cta':
             return (
-              <section key={block.id}>
+              <section
+                key={block.id}
+                className={classes.section}
+              >
                 <CtaBlock
                   ctaBackgroundColor={block.ctaBackgroundColor ? block.ctaBackgroundColor : 'darkPurple'}
                   styleType={block.type ? block.type : 'subtle'}
