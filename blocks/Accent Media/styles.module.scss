@@ -14,24 +14,6 @@
 
 .media {
   max-width: 1000px;
-  @include keyframes(twist) {
-    from {
-      opacity: 0;
-      transform: translate(18%, 0) rotate(-3deg) scale(1.05);
-    }
-    to {
-      opacity: 0.6;
-      transform: translate(15%, 20px);
-    }
-  }
-  @include animate(twist, 500ms, ease-in-out, 1);
-}
-
-.media.medium {
-  transform: translate(0, -15px);
-}
-
-.media.small {
   padding: 0;
   transform: translate(15%, 10px);
   @include keyframes(twist) {
@@ -47,9 +29,68 @@
   @include animate(twist, 500ms, ease-in-out, 1);
 }
 
+.media.medium {
+  max-height: 1000px;
+}
+
+@include extra-extra-large-break {
+  .media.medium {
+    padding: 0;
+    transform: translate(15%, 70px);
+    @include keyframes(twist) {
+      from {
+        opacity: 0;
+        transform: translate(18%, 0) rotate(-3deg) scale(1.05);
+      }
+      to {
+        opacity: 0.6;
+        transform: translate(15%, 70px);
+      }
+    }
+    @include animate(twist, 500ms, ease-in-out, 1);
+  }
+}
+
 @include extra-large-break {
-  .media.small {
-    padding: base(0.5) 0;
+  .media {
+    padding:0;
+    transform: translate(15%, 20px);
+    @include keyframes(twist) {
+      from {
+        opacity: 0;
+        transform: translate(18%, 0) rotate(-3deg) scale(1.05);
+      }
+      to {
+        opacity: 0.6;
+        transform: translate(15%, 20px);
+      }
+    }
+    @include animate(twist, 500ms, ease-in-out, 1);
+  }
+
+  .media.medium {
+    padding: 0;
+    transform: translate(15%, 60px);
+    @include keyframes(twist) {
+      from {
+        opacity: 0;
+        transform: translate(18%, 0) rotate(-3deg) scale(1.05);
+      }
+      to {
+        opacity: 0.6;
+        transform: translate(15%, 60px);
+      }
+    }
+    @include animate(twist, 500ms, ease-in-out, 1);
+  }
+}
+
+@include large-break {
+  .wrapper {
+    padding: 0;
+  }
+
+  .media {
     transform: translate(15%, 20px);
     @include keyframes(twist) {
     from {
@@ -63,14 +104,8 @@
   }
   @include animate(twist, 500ms, ease-in-out, 1);
   }
-}
 
-@include large-break {
-  .wrapper {
-    padding: 0;
-  }
-
-  .media.small {
+  .media.medium {
     transform: translate(15%, 20px);
     @include keyframes(twist) {
     from {
@@ -87,7 +122,7 @@
 }
 
 @include mid-break {
-  .media.small {
+  .media {
     transform: translate(15%, 20px);
     @include keyframes(twist) {
     from {

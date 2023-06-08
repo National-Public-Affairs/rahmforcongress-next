@@ -28,10 +28,10 @@ const AccentMediaBlock: React.FC<Props> = ({
     cells.s = { cols: 3, start: 4 };
   }
   if (accentSize === 'medium') {
-    cells.xl = { cols: 5, start: 5 };
+    cells.xl = { cols: 4, start: 6 };
     cells.l = { cols: 5, start: 5 };
-    cells.m = { cols: 3, start: 2 };
-    cells.s = { cols: 4, start: 2 };
+    cells.m = { cols: 3, start: 4 };
+    cells.s = { cols: 5, start: 2 };
   }
 
   return (
