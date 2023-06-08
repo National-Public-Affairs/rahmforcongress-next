@@ -5,6 +5,7 @@ import GridContainer from '../../GridContainer';
 import PolygonTwo from '@/components/graphics/Polygons/PolygonTwo';
 import { colors } from '@/styles/styles';
 import classes from '../WithMedia/styles.module.scss';
+import textStyles from '../../../../styles/app.module.scss';
 import { Cell, Grid } from '@faceless-ui/css-grid';
 
 type Props = {
@@ -16,9 +17,18 @@ const MinimalPageHero: React.FC<Props> = ({ content }) => {
     <div className={classes.minimalWrap}>
       <GridContainer>
         <Grid>
-          <Cell>
+          <Cell
+            colsXL={5}
+            startXL={5}
+            colsL={5}
+            startL={4}
+            colsM={4}
+            startM={2}
+            colsS={6}
+            startS={1}
+          >
             <RichText
-              className={classes.richText}
+              className={`${classes.richText} ${textStyles.h1}`}
               content={content}
             />
           </Cell>
