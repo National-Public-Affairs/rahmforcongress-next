@@ -83,6 +83,23 @@
     }
     @include animate(twist, 500ms, ease-in-out, 1);
   }
+
+  .media.large {
+    max-height: 1200px;
+    padding: 0 3px;
+    transform: translate(0, 20px);
+    @include keyframes(twist) {
+      from {
+        opacity: 0;
+        transform: translate(18%, 0) rotate(-3deg) scale(1.05);
+      }
+      to {
+        opacity: 0.6;
+        transform: translate(0, 20px);
+      }
+    }
+    @include animate(twist, 500ms, ease-in-out, 1);
+  }
 }
 
 @include large-break {
@@ -108,16 +125,33 @@
   .media.medium {
     transform: translate(15%, 20px);
     @include keyframes(twist) {
-    from {
-      opacity: 0;
-      transform: translate(18%, 0) rotate(-3deg) scale(1.05);
+      from {
+        opacity: 0;
+        transform: translate(18%, 0) rotate(-3deg) scale(1.05);
+      }
+      to {
+        opacity: 0.6;
+        transform: translate(15%, 20px);
+      }
     }
-    to {
-      opacity: 0.6;
-      transform: translate(15%, 20px);
-    }
+    @include animate(twist, 500ms, ease-in-out, 1);
   }
-  @include animate(twist, 500ms, ease-in-out, 1);
+  
+  .media.large {
+    max-height: 950px;
+    padding: 0 3px;
+    transform: translate(0, 20px);
+    @include keyframes(twist) {
+      from {
+        opacity: 0;
+        transform: translate(18%, 0) rotate(-3deg) scale(1.05);
+      }
+      to {
+        opacity: 0.6;
+        transform: translate(0, 20px);
+      }
+    }
+    @include animate(twist, 500ms, ease-in-out, 1);
   }
 }
 
@@ -139,7 +173,22 @@
 }
 
 @include small-break {
-  
+  .media.large {
+    max-height: 750px;
+    padding: 0 3px;
+    transform: translate(0, 20px);
+    @include keyframes(twist) {
+    from {
+      opacity: 0;
+      transform: translate(18%, 0) rotate(-3deg) scale(1.05);
+    }
+    to {
+      opacity: 0.6;
+      transform: translate(0, 20px);
+    }
+  }
+  @include animate(twist, 500ms, ease-in-out, 1);
+  }
 }
 
 @include extra-small-break {

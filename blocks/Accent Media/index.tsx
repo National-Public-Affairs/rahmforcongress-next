@@ -15,7 +15,7 @@ const AccentMediaBlock: React.FC<Props> = ({
   accentMedia,
 }) => {
   let cells = {
-    xl: { cols: 8, start: 3 },
+    xl: { cols: 12, start: 1 },
     l: { cols: 10, start: 3 },
     m: { cols: 8, start: 1 },
     s: { cols: 8, start: 1 },
