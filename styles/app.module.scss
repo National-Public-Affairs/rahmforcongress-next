@@ -45,7 +45,7 @@
 @mixin h3 {
   @include headingWeight;
   font-size: base(3.5);
-  line-height: base(4);
+  line-height: base(2.5);
   margin: base(2) 0 base(1.5);
 }
 
