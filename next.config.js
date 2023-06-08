@@ -7,7 +7,12 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'rahmforcongress-payload-cloud.payloadcms.app',
         pathname: '/media/**',
-      }
+      },
+      {
+        protocol: 'https',
+        hostname: 'backend.rahmforcongress.com',
+        pathname: '/media/**',
+      },
     ],
   },
 }
