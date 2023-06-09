@@ -1,0 +1,11 @@
+@import '../../styles/base.module.scss';
+
+.parallax {
+  transition: transform 400ms cubic-bezier(0, 0, 0.2, 1) 0s;
+}
+
+@include extra-small-break {
+  .parallax {
+    transition: transform 800ms cubic-bezier(0, 0, 0.2, 1) 0s;
+  }
+}
