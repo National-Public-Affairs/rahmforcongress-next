@@ -1,7 +1,6 @@
 import React from 'react';
 import { Grid, Cell } from '@faceless-ui/css-grid';
 import type { MediaType } from '@/types/fields';
-// import RichText from '../../../RichText';
 import GridContainer from '../../GridContainer';
 import Media from '@/components/Media';
 import RichText from '@/components/RichText';
