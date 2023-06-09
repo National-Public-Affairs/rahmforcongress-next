@@ -1,5 +1,6 @@
 import React from 'react';
 import { AccentMediaBlockType } from '@/types/blocks';
+import Parallax from '@/components/Parallax';
 import GridContainer from '@/components/layout/GridContainer';
 import { Cell, Grid } from '@faceless-ui/css-grid';
 import Media from '@/components/Media';
@@ -51,13 +52,15 @@ const AccentMediaBlock: React.FC<Props> = ({
             colsS={cells.s.cols}
             startS={cells.s.start}
           >
-            <Media
-              mimeType={accentMedia?.mimeType ? accentMedia?.mimeType : 'image/png'}
-              alt={accentMedia?.alt}
-              url={accentMedia?.url ? accentMedia?.url : ''}
-              clipMask={accentStyle ? accentStyle : 'one'}
-              className={`${classes.media} ${accentSize ? classes[accentSize] : ''}`}
-            />
+            <Parallax yDistance={100}>
+              <Media
+                mimeType={accentMedia?.mimeType ? accentMedia?.mimeType : 'image/png'}
+                alt={accentMedia?.alt}
+                url={accentMedia?.url ? accentMedia?.url : ''}
+                clipMask={accentStyle ? accentStyle : 'one'}
+                className={`${classes.media} ${accentSize ? classes[accentSize] : ''}`}
+              />
+            </Parallax>
           </Cell>
         </Grid>
       </GridContainer>
