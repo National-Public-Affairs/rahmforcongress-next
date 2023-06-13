@@ -1,0 +1,11 @@
+@import '../../styles/base.module.scss';
+
+.wrapper {
+  margin-top: 30vh;
+  @include grid-center-parent;
+  text-align: center;
+}
+
+.wrapper > * {
+  @include grid-center-child;
+}
