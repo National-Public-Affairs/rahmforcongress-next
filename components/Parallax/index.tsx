@@ -32,7 +32,7 @@ export const Parallax: React.FC<TParallax> = (props) => {
   const { current: node } = ref;
 
   useEffect(() => {
-    if (node) {
+    if (node && localWindowHeight) {
       const { y: nodeYPos, height: nodeHeight } = node.getBoundingClientRect();
       const isNotAboveViewport = nodeYPos + nodeHeight > 0;
       const isNotBelowViewport = localWindowHeight - nodeYPos > -1000;
@@ -46,13 +46,18 @@ export const Parallax: React.FC<TParallax> = (props) => {
 
   useEffect(() => {
     const sizeDifference = 200;
-    if (windowHeight) {
-      if (windowHeight > localWindowHeight + sizeDifference || windowHeight < localWindowHeight - sizeDifference) {
-        setLocalWindowHeight(windowHeight);
-      }
+    if (
+      (windowHeight && localWindowHeight)
+      &&
+      (windowHeight > localWindowHeight + sizeDifference || windowHeight < localWindowHeight - sizeDifference)
+    ) {
+
+      setLocalWindowHeight(windowHeight);
+    } else {
+      setLocalWindowHeight(windowHeight);
     }
   }, [localWindowHeight, windowHeight]);
-console.log('translate Y', translateY)
+
   const combinedStyles = {
     ...style,
     transform: `translate3d(0, ${translateY}px, 0)`,
