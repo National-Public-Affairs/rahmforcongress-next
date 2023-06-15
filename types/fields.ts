@@ -1,3 +1,5 @@
+type Color = 'purple' | 'yellow' | 'darkPurple' | 'white';
+
 ///////////////////////
 // Nav & Hyperlinks
 ///////////////////////
@@ -68,4 +70,15 @@ export type MinimalHeroType = {
 export type RichTextType = {
   children: any;
   type: any;
+};
+
+///////////////////////
+// Page Banner
+///////////////////////
+export type BannerType = {
+  display: 'yes' | 'no';
+  newTab: boolean;
+  link: LinkType;
+  bannerBackgroundColor: Color | 'none';
+  textColor: Color;
 };
