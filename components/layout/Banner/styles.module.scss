@@ -1,0 +1,11 @@
+@import '../../../styles/base.module.scss';
+
+.wrapper {
+  @include grid-center-parent;
+  padding: base(0.7) 0;
+}
+
+.link {
+  @include grid-center-child;
+  text-decoration: underline;
+}
