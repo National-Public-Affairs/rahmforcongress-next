@@ -1,4 +1,4 @@
-import type { MetaType, HeroType } from './fields';
+import type { MetaType, HeroType, BannerType } from './fields';
 import type { LayoutType } from './blocks';
 
 export type PageType = {
@@ -6,6 +6,7 @@ export type PageType = {
   title: string;
   hero: HeroType;
   layout: LayoutType[];
+  banner: BannerType;
   slug: string;
   meta: MetaType;
   _status: 'published' | 'draft';

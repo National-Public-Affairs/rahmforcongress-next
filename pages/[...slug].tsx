@@ -4,6 +4,7 @@ import NotFound from '@/components/NotFound';
 import Template from '@/components/layout/Template';
 import Head from '@/components/Head';
 import Hero from '@/components/layout/PageHero';
+import Banner from '@/components/layout/Banner';
 import { FooterType, LegalType, SocialType } from '@/types/globals';
 import RenderBlocks from '@/components/RenderBlocks';
 
@@ -25,14 +26,25 @@ const Page: React.FC<Props> = ({
   }
 
   const pageData = page.docs[0];
-  const { meta, hero, layout } = pageData;
-
+  const { meta, hero, layout, banner } = pageData;
+  
   return (
     <Template
       footer={footer}
       legal={legal}
       socialMedia={socialMedia}
     >
+      {
+        pageData?.banner?.display === 'yes' && (
+          <Banner
+            display={banner.display}
+            newTab={banner.newTab}
+            link={banner.link}
+            bannerBackgroundColor={banner.bannerBackgroundColor}
+            textColor={banner.textColor}
+          />
+        )
+      }
       <Head
         title={meta?.title}
         description={meta?.description}
