@@ -2,10 +2,13 @@
 import React from 'react';
 import Link from 'next/link';
 import type { LinkType } from '@/types/fields';
+import type { Color } from '@/styles/styles';
+import { colors } from '@/styles/styles';
 import classes from './styles.module.scss';
 
 type Props = {
   className?: string;
+  textColor?: Color;
 } & LinkType;
 
 const CMSLink: React.FC<Props> = ({
@@ -15,6 +18,7 @@ const CMSLink: React.FC<Props> = ({
   type,
   label,
   url,
+  textColor,
 }) => {
   if (type === 'reference') {
     return (
@@ -24,7 +28,10 @@ const CMSLink: React.FC<Props> = ({
         scroll={false}
         target={newTab ? '_blank' : '_self'}
       >
-        <a className={[classes.link, className].filter(Boolean).join(' ')}>
+        <a
+          className={[classes.link, className].filter(Boolean).join(' ')}
+          style={{ color: textColor?  colors[textColor] : 'white' }}
+        >
           {label}
         </a>
       </Link>
