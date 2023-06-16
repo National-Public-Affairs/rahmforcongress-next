@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 // import FormType
 import RichText from '@/components/RichText';
 import type { RichTextType } from '@/types/fields';
-// import form styling
+import classes from './styles.module.scss';
 
 export type Value = unknown;
 
@@ -56,18 +56,18 @@ export const FormBlock: React.FC<
     }
   } = props;
 
-  // const formMethods = useForm({
-  //   defaultValues: buildInitialFormState(formFromProps.fields),
-  // });
+  const formMethods = useForm({
+    defaultValues: buildInitialFormState(formFromProps.fields),
+  });
 
-  // const {
-  //   register,
-  //   handleSubmit,
-  //   formState: { errors },
-  //   control,
-  //   setValue,
-  //   getValues,
-  // } = formMethods;
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    control,
+    setValue,
+    getValues,
+  } = formMethods;
 
   const [isLoading, setIsLoading] = useState(false);
   const [hasSubmitted, setHasSubmitted] = useState<boolean>();
@@ -134,7 +134,47 @@ export const FormBlock: React.FC<
   , [router, formId, redirect, confirmationType]);
 
   return (
-    <div></div>
+    <div>
+      {
+        enableIntro && introContent && !hasSubmitted && (
+          <RichText
+            className={classes.intro}
+            content={introContent}
+          />
+        )
+      }
+      {
+        !isLoading && hasSubmitted && confirmationType === 'message' && (
+          <RichText
+            className={classes.intro}
+            content={confirmationMessage}
+          />
+        )
+      }
+      {
+        isLoading && !hasSubmitted && <p>Loading, please wait...</p>
+      }
+      {
+        error && <div>{`${error.status || 500}: ${error.message || ''}`}</div>
+      }
+      {
+        !hasSubmitted && (
+          <form id={formId} onSubmit={handleSubmit(onSubmit)}>
+            <div className={classes.fieldWrapper}>
+              {/* {
+                formFromProps
+                && formFromProps.fields
+                && formFromProps.fields.map((field, index) => {
+                  const Field: React.FC<any> = fields?.[field.block]
+                }) 
+              } */}
+              {/* this part needs to be figured out */}
+              {/* https://www.youtube.com/watch?v=Fm4YaG__EHg */}
+            </div>
+          </form>
+        )
+      }
+    </div>
   );
 };
 
