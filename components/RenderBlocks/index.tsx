@@ -4,6 +4,7 @@ import DonationBlock from '@/blocks/Donation';
 import ContentBlock from '@/blocks/Content';
 import AccentMediaBlock from '@/blocks/Accent Media';
 import CtaBlock from '@/blocks/CallToAction';
+import SignupFormBlock from '@/blocks/SignupForm';
 import classes from './styles.module.scss';
 
 type Props = {
@@ -69,6 +70,14 @@ const RenderBlocks: React.FC<Props> = ({ layout, className }) => (
                   styleType={block.type ? block.type : 'subtle'}
                   richText={block.richText}
                 />
+              </section>
+            );
+          case 'formBlock':
+            return (
+              <section
+                key={block.id}
+              >
+                <SignupFormBlock />
               </section>
             );
           default:
