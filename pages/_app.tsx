@@ -26,7 +26,7 @@ type AppProps = {
 
 const poppins = Poppins({
   subsets: ['latin'],
-  weight: '300',
+  weight: ['300', '700'],
 });
 
 function MyApp(appProps: AppProps): React.ReactElement {
