@@ -4,6 +4,7 @@ import { ModalContainer, ModalProvider } from '@faceless-ui/modal';
 import { WindowInfoProvider } from '@faceless-ui/window-info';
 import { ScrollInfoProvider } from '@faceless-ui/scroll-info';
 import { GridProvider } from '@faceless-ui/css-grid';
+import { Toaster } from 'react-hot-toast';
 import { breakpoints, zIndex, baseStyling } from '@/styles/styles';
 import type { FooterType, HeaderType, LegalType, SocialType } from '@/types/globals';
 import Header from '@/components/layout/Header';
@@ -55,6 +56,7 @@ function MyApp(appProps: AppProps): React.ReactElement {
           classPrefix="rModal"
           transTime={400}
         >
+          <Toaster />
           <GridProvider
             rowGap={{
               s: baseStyling.base(2),
