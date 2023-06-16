@@ -18,7 +18,6 @@ const Banner: React.FC<Props> = ({
       className={classes.wrapper}
       style={{
         backgroundColor: colors[bannerBackgroundColor],
-        color: colors[textColor],
       }}
     >
       <CMSLink
@@ -29,6 +28,7 @@ const Banner: React.FC<Props> = ({
         url={link.url}
         className={classes.link}
         newTab={newTab}
+        textColor={textColor}
       />
     </div>
   )
