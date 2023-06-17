@@ -1,42 +1,19 @@
 import React, { useState, useCallback } from 'react';
 import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/router';
-// import { buildInitialFormState } from './buildInitialFormState.tsx';
+import type {
+  FormBlockType,
+  FormType,
+  Value,
+  Property,
+  Data,
+} from './types';
+import { buildInitialFormState } from './buildInitialFormState';
 // import { fields } from './fields';
-// import FormType
+
 import RichText from '@/components/RichText';
 import type { RichTextType } from '@/types/fields';
 import classes from './styles.module.scss';
-
-export type Value = unknown;
-
-export interface Property {
-  [key: string]: Value;
-}
-
-export interface Data {
-  [key: string]: Value | Property | Property[];
-}
-
-export type FormType = {
-  id: string;
-  title: string;
-  fields: any; // this needs to be fixed
-  submitButtonLabel?: string;
-  confirmationType: 'message' | 'redirect';
-  confirmationMessage?: RichTextType;
-  redirect?: any; // deal with this
-}
-
-export type FormBlockType = {
-  blockName?: string;
-  blockType?: 'formBlock';
-  enableIntro: boolean;
-  form: FormType;
-  introContent?: {
-    [k: string]: unknown;
-  }[];
-}
 
 export const FormBlock: React.FC<
   FormBlockType & {
@@ -161,16 +138,32 @@ export const FormBlock: React.FC<
         !hasSubmitted && (
           <form id={formId} onSubmit={handleSubmit(onSubmit)}>
             <div className={classes.fieldWrapper}>
-              {/* {
+              {
                 formFromProps
                 && formFromProps.fields
                 && formFromProps.fields.map((field, index) => {
-                  const Field: React.FC<any> = fields?.[field.block]
+                  const Field: React.FC<any> = fields?.[field.blockType];
+                  if (Field) {
+                    return (
+                      <React.Fragment key={index}>
+                        <Field
+                          form={formFromProps}
+                          {...field}
+                          {...formMethods}
+                          register={register}
+                          errors={errors}
+                          control={control}
+                        />
+                      </React.Fragment>
+                    );
+                  }
+                  return null;
                 }) 
-              } */}
+              }
               {/* this part needs to be figured out */}
               {/* https://www.youtube.com/watch?v=Fm4YaG__EHg */}
             </div>
+            <Button label={submitButtonLabel} form={formId} />
           </form>
         )
       }
