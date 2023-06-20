@@ -1,8 +1,11 @@
 @import '../../../styles/base.module.scss';
 
 .wrapper {
+  position: relative;
   @include grid-center-parent;
+  z-index: 10;
   padding: base(0.7) 0;
+  box-shadow: $box-shadow;
 }
 
 .link {
