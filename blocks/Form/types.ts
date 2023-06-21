@@ -1,3 +1,5 @@
+import { RichTextType } from "@/types/fields";
+
 export type Value = unknown;
 
 export interface Property {
@@ -149,7 +151,8 @@ export type FormBlockType = {
   blockType: 'formBlock';
   enableIntro: boolean;
   form: FormType;
-  introContent?: {
-    [k: string]: unknown;
-  }[];
+  // introContent?: {
+  //   [k: string]: unknown;
+  // }[];
+  introContent?: RichTextType;
 };
