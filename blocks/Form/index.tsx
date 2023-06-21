@@ -105,7 +105,12 @@ export const FormBlock: React.FC<
   , [router, formId, redirect, confirmationType]);
 
   return (
-    <div>
+    <div
+      className={[
+        classes.form,
+        hasSubmitted && classes.hasSubmitted,
+      ].filter(Boolean).join(' ')}
+    >
       {
         enableIntro && introContent && !hasSubmitted && (
           <RichText
@@ -117,7 +122,7 @@ export const FormBlock: React.FC<
       {
         !isLoading && hasSubmitted && confirmationType === 'message' && (
           <RichText
-            className={classes.intro}
+            className={classes.confirmationMessage}
             content={confirmationMessage}
           />
         )
@@ -158,8 +163,8 @@ export const FormBlock: React.FC<
               {/* https://www.youtube.com/watch?v=Fm4YaG__EHg */}
             </div>
             {/* <Button label={submitButtonLabel} form={formId} /> */}
-            <button type="submit">
-              
+            <button type="submit" form={formId}>
+              {submitButtonLabel}
             </button>
           </form>
         )
