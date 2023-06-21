@@ -7,7 +7,7 @@
   // font-family: var(--font-body);
   width: 100%;
   border: 1px solid $user-dark-purple;
-  background: $user-purple;
+  background: $user-dark-purple;
   color: $user-white;
   font-size: 1rem;
   height: calc(base(1) * 2.5);
@@ -27,7 +27,7 @@
 
   &:focus,
   &:active {
-    border-color: var(--color-gray);
+    border-color: $user-yellow;
     outline: 0;
   }
 
