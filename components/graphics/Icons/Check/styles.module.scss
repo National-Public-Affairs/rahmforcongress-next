@@ -1,0 +1,18 @@
+@import '../../../../styles/base.module.scss';
+
+.checkBox {
+  height: base(1);
+  width: base(1);
+
+  .stroke {
+    stroke-width: 1px;
+    fill: none;
+    stroke: $user-white;
+  }
+
+  &:local() {
+    .stroke {
+      stroke-width: 2px;
+    }
+  }
+}
