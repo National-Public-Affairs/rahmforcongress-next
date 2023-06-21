@@ -1,8 +1,9 @@
 @use "../shared.scss";
+@import '../../../styles/base.module.scss';
 
 .checkbox {
   position: relative;
-  margin-bottom: var(--base);
+  margin-bottom: base(1);
 
   :global {
     button {
@@ -46,9 +47,9 @@
   padding: 0;
   line-height: 0;
   position: relative;
-  width: var(--base);
-  height: var(--base);
-  margin-right: calc(var(--base) * 0.5);
+  width: base(1);
+  height: base(1);
+  margin-right: calc(base(1) * 0.5);
   margin-bottom: 0;
 
   svg {
