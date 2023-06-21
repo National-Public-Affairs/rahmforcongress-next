@@ -18,4 +18,7 @@ export const fields = {
   state: State,
   text: Text,
   textarea: Textarea,
+  payment: Textarea,
+  // payment field is currently disabled
+  // this is to deal with TS error
 }
