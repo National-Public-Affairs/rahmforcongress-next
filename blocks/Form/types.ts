@@ -140,12 +140,13 @@ export type FormType = {
   confirmationType: 'message' | 'redirect';
   confirmationMessage?: any;
   redirect?: Redirect;
-  emails: Email[];
+  emails?: Email[];
 };
 
 export type FormBlockType = {
+  id: string;
   blockName?: string;
-  blockType?: 'formBlock';
+  blockType: 'formBlock';
   enableIntro: boolean;
   form: FormType;
   introContent?: {
