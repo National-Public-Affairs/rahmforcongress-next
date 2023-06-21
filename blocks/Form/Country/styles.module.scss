@@ -52,12 +52,12 @@
       cursor: pointer;
 
       svg path {
-        fill: $user-white;
+        fill: darkgray;
       }
 
       &:hover {
         svg path {
-          fill: $user-white;
+          fill: darkgray;
         }
       }
     }
@@ -67,7 +67,7 @@
     }
 
     .rs__menu {
-      color: $user-white;
+      color: $user-purple;
       background-color: $user-white;
       z-index: 2;
       border-radius: 0;
@@ -88,12 +88,12 @@
 
       &--is-focused {
         background-color: $user-dark-purple;
-        color: $user-white;
+        color: $user-yellow;
       }
 
       &--is-selected {
-        background-color: $user-dark-purple;
-        color: $user-purple;
+        background-color: $user-yellow;
+        color: $user-dark-purple;
       }
     }
 

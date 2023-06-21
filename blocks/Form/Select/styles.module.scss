@@ -57,7 +57,7 @@
 
       &:hover {
         svg path {
-          fill: gray;
+          fill: darkgrey;
         }
       }
     }
@@ -67,7 +67,7 @@
     }
 
     .rs__menu {
-      color: black;
+      color: $user-purple;
       background-color: white;
       z-index: 2;
       border-radius: 0;
@@ -87,13 +87,13 @@
       padding: calc(base(1) / 2) base(1);
 
       &--is-focused {
-        background-color: lightgray;
-        color: black;
+        background-color: $user-dark-purple;
+        color: $user-yellow;
       }
 
       &--is-selected {
-        background-color: lightgray;
-        color: black;
+        background-color: $user-yellow;
+        color: $user-dark-purple;
       }
     }
 
@@ -104,7 +104,7 @@
 
     .rs__multi-value__label {
       max-width: 150px;
-      color: black;
+      color: $user-dark-purple;
       padding: calc(base(1) / 8) calc(base(1) / 4);
     }
 
@@ -112,8 +112,8 @@
       cursor: pointer;
 
       &:hover {
-        color: black;
-        background: lightgray;
+        color: $user-white;
+        background: $user-dark-purple;
       }
     }
 
