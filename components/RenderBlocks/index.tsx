@@ -85,6 +85,7 @@ const RenderBlocks: React.FC<Props> = ({ layout, className }) => {
                         id={block.id}
                         blockType={block.blockType}
                         enableIntro={block.enableIntro ? block.enableIntro : false}
+                        introContent={block.introContent ? block.introContent : undefined}
                         form={block.form}
                       />
                     )
