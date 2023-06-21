@@ -31,7 +31,7 @@ export const State: React.FC<StateField & {
               instanceId={name}
               options={stateOptions}
               value={stateOptions.find(t => t.value === value)}
-              onChange={(val) => onChange(val.value)}
+              onChange={(val) => onChange(val?.value)}
               className={classes.reactSelect}
               classNamePrefix="rs"
             />
