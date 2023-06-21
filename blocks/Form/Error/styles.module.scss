@@ -1,4 +1,7 @@
+@import '../../../styles/base.module.scss';
+
 .error {
   margin-top: 5px;
   color: red;
+  font-size: base(0.65);
 }
