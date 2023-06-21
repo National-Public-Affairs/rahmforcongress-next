@@ -11,13 +11,6 @@ export default async function handler(
   res: NextApiResponse<ResData>
 ) {
   console.log('REQ BODY', req.body);
-  // ERROR IF NO OPT-IN
-  if (!req.body.optIn) {
-    res.status(400).json({
-      status: false,
-      error: 'User not opted-in',
-    });
-  }
 
   const payloadReq = await fetch(
     `${process.env.NEXT_PUBLIC_SERVER_URL}/api/form-submissions`,
@@ -26,14 +19,7 @@ export default async function handler(
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        form: '648c774f8e53add655fe8ed0',
-        submissionData: {
-          firstName: 'Andy',
-          email: 'andrew@helloenterprises.com',
-          optIn: true,
-        },
-      }),
+      body: JSON.stringify(req.body),
     }
   );
 
