@@ -20,7 +20,6 @@ export const Email: React.FC<EmailField & {
         </label>
         <input
           type="text"
-          placeholder="Email"
           className={classes.input}
           {...register(name, { required: requiredFromProps, pattern: /^\S+@\S+$/i })}
         />
