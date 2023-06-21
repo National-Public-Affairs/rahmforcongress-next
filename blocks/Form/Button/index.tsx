@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import classes from './styles.module.scss';
+import { colors } from '@/styles/styles';
 
 export type Props = {
   label: string;
@@ -46,7 +47,7 @@ export const Button: React.FC<Props> = ({
   )
 
   return (
-    <Element {...elementProps}>
+    <Element {...elementProps} style={{ backgroundColor: colors.darkPurple }}>
       <React.Fragment>
         {el === 'link' && (
           <a {...newTabProps} href={href} className={elementProps.className}>
