@@ -3,7 +3,7 @@ import type { MessageField } from '../types';
 import RichText from '@/components/RichText';
 import { Width } from "../Width";
 
-import classes from './index.module.scss';
+import classes from './styles.module.scss';
 
 export const Message: React.FC<MessageField> = ({ message }) => {
   return (

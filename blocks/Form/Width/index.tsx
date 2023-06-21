@@ -1,5 +1,5 @@
 import * as React from 'react';
-import classes from './index.module.scss';
+import classes from './styles.module.scss';
 
 export const Width: React.FC<{
   width?: string

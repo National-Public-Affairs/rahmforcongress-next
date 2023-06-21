@@ -5,7 +5,7 @@ import { Controller, Control, FieldValues, FieldErrorsImpl } from 'react-hook-fo
 import { Error } from '../Error';
 import { Width } from '../Width';
 
-import classes from './index.module.scss';
+import classes from './styles.module.scss';
 
 export const Select: React.FC<SelectField & {
   control: Control<FieldValues, any>
@@ -29,7 +29,7 @@ export const Select: React.FC<SelectField & {
               instanceId={name}
               options={options}
               value={options.find(s => s.value === value)}
-              onChange={(val) => onChange(val.value)}
+              onChange={(val: any) => onChange(val.value)}
               className={classes.reactSelect}
               classNamePrefix="rs"
             />

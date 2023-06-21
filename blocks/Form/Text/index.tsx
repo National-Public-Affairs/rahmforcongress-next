@@ -4,7 +4,7 @@ import { UseFormRegister, FieldValues, FieldErrorsImpl } from 'react-hook-form';
 import { Error } from '../Error';
 import { Width } from '../Width';
 
-import classes from './index.module.scss';
+import classes from './styles.module.scss';
 
 
 export const Text: React.FC<TextField & {

@@ -6,7 +6,7 @@ import { stateOptions } from './options';
 import { Error } from '../Error';
 import { Width } from '../Width';
 
-import classes from './index.module.scss';
+import classes from './styles.module.scss';
 
 export const State: React.FC<StateField & {
   control: Control<FieldValues, any>

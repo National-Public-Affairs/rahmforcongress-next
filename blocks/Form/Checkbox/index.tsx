@@ -5,7 +5,7 @@ import Check from '@/components/graphics/Icons/Check';
 import { Error } from '../Error';
 import { Width } from '../Width';
 
-import classes from './index.module.scss';
+import classes from './styles.module.scss';
 
 export const Checkbox: React.FC<CheckboxField & {
   register: UseFormRegister<FieldValues & any>,
