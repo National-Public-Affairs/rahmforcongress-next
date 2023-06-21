@@ -6,6 +6,7 @@ import { buildInitialFormState } from './buildInitialFormState';
 import { fields } from './fields';
 
 import RichText from '@/components/RichText';
+import { Button } from './Button';
 import classes from './styles.module.scss';
 
 export const FormBlock: React.FC<
@@ -162,10 +163,10 @@ export const FormBlock: React.FC<
               {/* this part needs to be figured out */}
               {/* https://www.youtube.com/watch?v=Fm4YaG__EHg */}
             </div>
-            {/* <Button label={submitButtonLabel} form={formId} /> */}
-            <button type="submit" form={formId}>
-              {submitButtonLabel}
-            </button>
+            <Button
+              label={submitButtonLabel ? submitButtonLabel : 'Submit'}
+              form={formId}
+            />
           </form>
         )
       }
