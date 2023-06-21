@@ -1,0 +1,63 @@
+@import '../../../styles/base.module.scss';
+@import '../../../styles/app.module.scss';
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    margin-right: calc(base(1) / 2);
+    width: base(1);
+    height: base(1);
+  }
+}
+
+.label {
+  @include h5;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.button {
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  display: inline-flex;
+  position: relative;
+  text-decoration: none;
+  padding: 12px 18px;
+  margin-bottom: base(1);
+  align-items: center;
+  justify-content: center;
+  color: $user-yellow;
+}
+
+.appearance--primary {
+  background-color: var(--color-black);
+  color: var(--color-white);
+
+  &:hover, &:focus {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    box-shadow: inset 0 0 0 1px var(--color-black);
+  }
+}
+
+.appearance--secondary {
+  background-color: var(--color-white);
+  box-shadow: inset 0 0 0 1px var(--color-black);
+
+  &:hover, &:focus {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    box-shadow: inset 0 0 0 1px var(--color-black);
+  }
+}
+
+.appearance--default {
+  padding: 0;
+  margin-left: -8px;
+}
