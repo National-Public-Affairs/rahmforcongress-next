@@ -1,5 +1,6 @@
 import { Color } from '@/styles/styles';
-import { LinkType, MediaType, RichTextType } from './fields';
+import type { LinkType, MediaType, RichTextType } from './fields';
+import type { FormBlockType, FormType } from '@/blocks/Form/types';
 
 export type BlockType =
   | 'content'
@@ -10,19 +11,43 @@ export type BlockType =
   | 'archive'
   | 'accentMediaBlock';
 
+// export interface LayoutAttributes {
+//   id: string;
+//   blockType: BlockType;
+// }
+
+// OLD VERSION **************************
 export type LayoutType = {
   blockType: BlockType;
   id: string;
+  blockName?: string;
   cta?: string;
   options?: DonationOptionType[];
-  backgroundColor: Color;
+  backgroundColor?: Color;
   ctaBackgroundColor?: Color;
   richText?: RichTextType[];
   accentStyle?: 'one' | 'two';
   accentSize?: 'small' | 'medium' | 'large';
   accentMedia?: MediaType;
   type?: 'bold' | 'subtle';
+  enableIntro?: boolean;
+  introContent: RichTextType;
+  form?: FormType;
 };
+// *************************************
+
+// 1ST ATTEMPT; MOST LIKELY UNSUCCESSFUL
+// export interface LayoutType 
+// | LayoutAttributes & ContentBlockType
+// | LayoutAttributes & DonationBlockType
+// | LayoutAttributes & AccentMediaBlockType
+// | LayoutAttributes & CtaBlockType
+// | LayoutAttributes & FormBlockType;
+
+// export interface LayoutType {
+//   id: string;
+//   blockType: BlockType;
+// }
 
 ///////////////////////
 // Donation Block
@@ -42,9 +67,9 @@ export type DonationOptionType = {
 ///////////////////////
 // Content Block
 ///////////////////////
-export type ContentBlockType = {
-  backgroundColor?: Color;
-  richText?: RichTextType[];
+export interface ContentBlockType extends LayoutAttributes {
+  backgroundColor: Color;
+  richText: RichTextType[];
 }
 
 ///////////////////////
