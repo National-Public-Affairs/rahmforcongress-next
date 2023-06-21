@@ -151,8 +151,5 @@ export type FormBlockType = {
   blockType: 'formBlock';
   enableIntro: boolean;
   form: FormType;
-  // introContent?: {
-  //   [k: string]: unknown;
-  // }[];
   introContent?: RichTextType;
 };
