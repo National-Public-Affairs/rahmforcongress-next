@@ -13,6 +13,7 @@ export const FormBlock: React.FC<
     id?: string;
   }
 > = (props) => {
+  // console.log('FORM PROPS', props)
   const {
     enableIntro,
     introContent,
