@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import type { CheckboxField } from '../types';
 import { UseFormRegister, FieldErrorsImpl, FieldValues } from 'react-hook-form';
-import Check from '@/components/graphics/Icons/Check';
+import Check from '@/components/graphics/Icons/Check/Check';
 import { Error } from '../Error';
 import { Width } from '../Width';
 
