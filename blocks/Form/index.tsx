@@ -58,9 +58,9 @@ export const FormBlock: React.FC<
           field: name,
           value,
         }));
-
+        console.log('data to send', dataToSend)
         try {
-          const req = await fetch('/api/submitForm', {
+          await fetch('/api/submitForm', {
             method: 'POST',
             headers: {
               'Accept': 'application/json',
@@ -71,17 +71,6 @@ export const FormBlock: React.FC<
               submissionData: dataToSend,
             }),
           });
-
-          const res = await req.json();
-
-          if (req.status >= 400) {
-            setIsLoading(false);
-            setError({
-              status: res.status,
-              message: res.errors?.[0]?.message || 'Internal Server Error',
-            });
-            return;
-          }
 
           setIsLoading(false);
           setHasSubmitted(true);
