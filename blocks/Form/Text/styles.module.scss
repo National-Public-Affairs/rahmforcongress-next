@@ -1,8 +1,9 @@
 @use "../shared.scss";
+@import '../../../styles/base.module.scss';
 
 .wrap {
   position: relative;
-  margin-bottom: var(--base);
+  margin-bottom: base(1);
 }
 
 .input {

@@ -1,8 +1,9 @@
 @use "../shared.scss";
+@import '../../../styles/base.module.scss';
 
 .select {
   position: relative;
-  margin-bottom: var(--base);
+  margin-bottom: base(1);
 }
 
 .label {
@@ -20,7 +21,7 @@
     }
 
     .rs__input-container {
-      color: var(--color-black);
+      color: black;
     }
 
     .rs__value-container {
@@ -34,13 +35,13 @@
     }
 
     .rs__single-value {
-      color: var(--color-black);
+      color: black;
     }
 
     .rs__indicators {
       position: absolute;
-      top: calc(var(--base) * 0.9);
-      right: calc(var(--base) * 0.9);
+      top: calc(base(1) * 0.9);
+      right: calc(base(1) * 0.9);
       .arrow {
         transform: rotate(90deg);
       }
@@ -51,12 +52,12 @@
       cursor: pointer;
 
       svg path {
-        fill: var(--color-dark-gray);
+        fill: darkgray;
       }
 
       &:hover {
         svg path {
-          fill: var(--color-dark-gray);
+          fill: darkgray;
         }
       }
     }
@@ -66,53 +67,53 @@
     }
 
     .rs__menu {
-      color: var(--color-black);
-      background-color: var(--color-white);
+      color: black;
+      background-color: white;
       z-index: 2;
       border-radius: 0;
       box-shadow: 0 4px 11px hsl(0deg 0% 0% / 10%);
     }
 
     .rs__menu-list {
-      padding: calc(var(--base) / 4) 0;
+      padding: calc(base(1) / 4) 0;
     }
 
     .rs__group-heading {
-      margin-bottom: calc(var(--base) / 2);
+      margin-bottom: calc(base(1) / 2);
     }
 
     .rs__option {
       font-size: 1rem;
-      padding: calc(var(--base) / 2) var(--base);
+      padding: calc(base(1) / 2) base(1);
 
       &--is-focused {
-        background-color: var(--color-light-gray);
-        color: var(--color-black);
+        background-color: lightgray;
+        color: black;
       }
 
       &--is-selected {
-        background-color: var(--color-light-gray);
-        color: var(--color-black);
+        background-color: lightgray;
+        color: black;
       }
     }
 
     .rs__multi-value {
       padding: 0;
-      background: var(--color-light-gray);
+      background: lightgray;
     }
 
     .rs__multi-value__label {
       max-width: 150px;
-      color: var(--color-black);
-      padding: calc(var(--base) / 8) calc(var(--base) / 4);
+      color: black;
+      padding: calc(base(1) / 8) calc(base(1) / 4);
     }
 
     .rs__multi-value__remove {
       cursor: pointer;
 
       &:hover {
-        color: var(--color-black);
-        background: var(--color-light-gray);
+        color: black;
+        background: lightgray;
       }
     }
 

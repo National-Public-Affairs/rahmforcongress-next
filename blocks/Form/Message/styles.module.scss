@@ -1,9 +1,9 @@
-// @use '../.../../../../../css/queries.scss' as *;
+@import '../../../styles/base.module.scss';
 
-// .message {
-//   margin: var(--base) 0 var(--base) 0;
+.message {
+  margin: base(1) 0 base(1) 0;
 
-//   @include mid-break {
-//     margin: calc(var(--base) * 0.5) 0 calc(var(--base) * 0.5) 0;
-//   }
-// }
+  @include mid-break {
+    margin: calc(base(1) * 0.5) 0 calc(base(1) * 0.5) 0;
+  }
+}
