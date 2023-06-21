@@ -3,7 +3,6 @@
 /////////////////////////////
 // BREAKPOINTS
 /////////////////////////////
-
 $breakpoint-xs-width: 400px !default;
 $breakpoint-s-width: 768px !default;
 $breakpoint-m-width: 1024px !default;
@@ -11,10 +10,11 @@ $breakpoint-l-width: 1440px !default;
 $breakpoint-xl-width: 1920px !default;
 $breakpoint-xxl-width: 2300px !default;
 
+
+
 //////////////////////////////
 // BASELINE GRID
 //////////////////////////////
-
 $baseline-px : 20px !default;
 $baseline-body-size : 18px !default;
 $baseline : math.div($baseline-px, $baseline-body-size)+rem;
@@ -23,6 +23,8 @@ $baseline : math.div($baseline-px, $baseline-body-size)+rem;
   @return (math.div($baseline-px, $baseline-body-size) * $multiplier)+rem;
 }
 
+
+
 //////////////////////////////
 // Z-INDEX
 //////////////////////////////
@@ -30,10 +32,14 @@ $zindex-page: 10;
 $zindex-modal: 20;
 $zindex-header: 30;
 
+
+
 //////////////////////////////
 // HEADER
 //////////////////////////////
 $header-height: base(8);
+
+
 
 //////////////////////////////
 // STRUCTURE
@@ -48,15 +54,18 @@ $gutter-xl: base(7);
   margin: 0 auto;
 }
 
+
+
 //////////////////////////////
 // TRANSITIONS
 //////////////////////////////
 $transition-default: 300ms;
 
+
+
 ////////////////////////////
 // MEDIA QUERIES
 /////////////////////////////
-
 @mixin extra-small-break {
   @media (max-width: $breakpoint-xs-width) {
     @content;
@@ -93,6 +102,8 @@ $transition-default: 300ms;
   }
 }
 
+
+
 //////////////////////////////
 // COLORS
 //////////////////////////////
@@ -102,10 +113,14 @@ $user-yellow: #F0A239;
 $user-white: #FFFFFF;
 $user-gray: #8F8F8F;
 
+
+
 //////////////////////////////
 // BOX SHADOWS
 //////////////////////////////
 $box-shadow: 0 0 1.9px rgba(0, 0, 0, 0.028), 0 0 4.6px rgba(0, 0, 0, 0.04), 0 0 8.6px rgba(0, 0, 0, 0.05), 0 0 15.4px rgba(0, 0, 0, 0.06), 0 0 28.8px rgba(0, 0, 0, 0.072), 0 0 69px rgba(0, 0, 0, 0.1);
+
+
 
 //////////////////////////////
 // KEYFRAMES
@@ -119,6 +134,8 @@ $box-shadow: 0 0 1.9px rgba(0, 0, 0, 0.028), 0 0 4.6px rgba(0, 0, 0, 0.04), 0 0 
     @content;
   }
 }
+
+
 
 //////////////////////////////
 // CSS GRID
