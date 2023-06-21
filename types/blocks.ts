@@ -11,12 +11,6 @@ export type BlockType =
   | 'archive'
   | 'accentMediaBlock';
 
-// export interface LayoutAttributes {
-//   id: string;
-//   blockType: BlockType;
-// }
-
-// OLD VERSION **************************
 export type LayoutType = {
   blockType: BlockType;
   id: string;
@@ -34,20 +28,6 @@ export type LayoutType = {
   introContent: RichTextType;
   form?: FormType;
 };
-// *************************************
-
-// 1ST ATTEMPT; MOST LIKELY UNSUCCESSFUL
-// export interface LayoutType 
-// | LayoutAttributes & ContentBlockType
-// | LayoutAttributes & DonationBlockType
-// | LayoutAttributes & AccentMediaBlockType
-// | LayoutAttributes & CtaBlockType
-// | LayoutAttributes & FormBlockType;
-
-// export interface LayoutType {
-//   id: string;
-//   blockType: BlockType;
-// }
 
 ///////////////////////
 // Donation Block
@@ -67,7 +47,7 @@ export type DonationOptionType = {
 ///////////////////////
 // Content Block
 ///////////////////////
-export interface ContentBlockType extends LayoutAttributes {
+export type ContentBlockType = {
   backgroundColor: Color;
   richText: RichTextType[];
 }
