@@ -1,18 +1,11 @@
 import React, { useState, useCallback } from 'react';
 import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/router';
-import type {
-  FormBlockType,
-  FormType,
-  Value,
-  Property,
-  Data,
-} from './types';
+import type { FormBlockType, Data } from './types';
 import { buildInitialFormState } from './buildInitialFormState';
-// import { fields } from './fields';
+import { fields } from './fields';
 
 import RichText from '@/components/RichText';
-import type { RichTextType } from '@/types/fields';
 import classes from './styles.module.scss';
 
 export const FormBlock: React.FC<
@@ -163,7 +156,10 @@ export const FormBlock: React.FC<
               {/* this part needs to be figured out */}
               {/* https://www.youtube.com/watch?v=Fm4YaG__EHg */}
             </div>
-            <Button label={submitButtonLabel} form={formId} />
+            {/* <Button label={submitButtonLabel} form={formId} /> */}
+            <button type="submit">
+              
+            </button>
           </form>
         )
       }
