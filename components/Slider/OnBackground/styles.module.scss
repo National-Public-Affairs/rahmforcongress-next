@@ -1,0 +1,59 @@
+@import '../../../styles/base.module.scss';
+
+$large: base(5);
+$medium: base(3);
+$small: base(1);
+
+.sliderOnBackground {
+  overflow: hidden;
+  position: relative;
+}
+
+.gutter {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.bg {
+  height: 100%;
+}
+
+.sliderWrap {
+
+}
+
+.slider {
+  padding: $large $medium;
+
+  @include mid-break {
+    padding: $medium $small;
+  }
+}
+
+.trackWrap {
+  margin-bottom: $large;
+
+  @include mid-break {
+    margin-bottom: $medium;
+  }
+}
+
+.track {
+  position: relative;
+  top: 0;
+  bottom: 100%;
+  height: 3px;
+  width: base(11);
+  background-color: $user-purple;
+
+  @include mid-break {
+    width: base(9);
+  }
+
+  @include small-break {
+    width: base(3);
+  }
+}
