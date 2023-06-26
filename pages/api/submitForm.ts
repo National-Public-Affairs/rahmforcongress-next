@@ -12,18 +12,20 @@ export default async function handler(
 ) {
   console.log('REQ BODY', req.body);
 
-  const payloadReq = await fetch(
-    `${process.env.NEXT_PUBLIC_SERVER_URL}/api/form-submissions`,
-    {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(req.body),
-    }
-  );
-
-  const payloadRes = await payloadReq.json();
-    console.log('PAYLOAD RES', payloadRes);
-  res.status(200).json({ status: true });
+  try {
+    await fetch(
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/api/form-submissions`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(req.body),
+      }
+    );
+    
+    res.status(200).json({ status: true });
+  } catch (e) {
+    console.log('SERVERLESS FUNC ERROR', e);
+  }
 }
