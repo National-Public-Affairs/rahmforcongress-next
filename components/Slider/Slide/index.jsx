@@ -8,7 +8,7 @@ const Slide = ({
   dispatch,
   i,
   containerRef,
-}: Props) => {
+}) => {
   const ref = useRef<HTMLDivElement>(null);
   const [resizeRef, resizeEntry] = useResize();
 
@@ -20,7 +20,8 @@ const Slide = ({
   } = resizeEntry || {};
 
   useEffect(() => {
-    let observer: IntersectionObserver;
+    // let observer: IntersectionObserver;
+    let observer;
     const refCopy = ref?.current;
 
     if (refCopy && containerRef?.current) {
