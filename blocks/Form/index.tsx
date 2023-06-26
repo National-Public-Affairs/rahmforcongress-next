@@ -14,7 +14,7 @@ export const FormBlock: React.FC<
     id?: string;
   }
 > = (props) => {
-  // console.log('FORM PROPS', props)
+  console.log('FORM PROPS', props.form.fields)
   const {
     enableIntro,
     introContent,
@@ -27,7 +27,8 @@ export const FormBlock: React.FC<
       redirect,
     }
   } = props;
-
+console.log('FORM FROM PROPS', formFromProps.fields)
+console.log('INITIAL FORM STATE', buildInitialFormState(formFromProps.fields))
   const formMethods = useForm({
     defaultValues: buildInitialFormState(formFromProps.fields),
   });
