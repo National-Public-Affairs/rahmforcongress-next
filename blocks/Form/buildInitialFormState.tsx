@@ -2,40 +2,40 @@ import type { FormFieldBlock } from './types';
 
 export const buildInitialFormState = (fields: FormFieldBlock[]) => {
   return fields.reduce((initialSchema: any, field) => {
-    if (field.blockType === 'checkbox' && field.blockName) {
+    if (field.blockType === 'checkbox' && field.name) {
       return {
         ...initialSchema,
-        [field.blockName]: false,
+        [field.name]: false,
       }
     }
-    if (field.blockType === 'country' && field.blockName) {
+    if (field.blockType === 'country' && field.name) {
       return {
         ...initialSchema,
-        [field.blockName]: '',
+        [field.name]: '',
       }
     }
-    if (field.blockType === 'email' && field.blockName) {
+    if (field.blockType === 'email' && field.name) {
       return {
         ...initialSchema,
-        [field.blockName]: '',
+        [field.name]: '',
       }
     }
-    if (field.blockType === 'text' && field.blockName) {
+    if (field.blockType === 'text' && field.name) {
       return {
         ...initialSchema,
-        [field.blockName]: '',
+        [field.name]: '',
       }
     }
-    if (field.blockType === 'select' && field.blockName) {
+    if (field.blockType === 'select' && field.name) {
       return {
         ...initialSchema,
-        [field.blockName]: '',
+        [field.name]: '',
       }
     }
-    if (field.blockType === 'state' && field.blockName) {
+    if (field.blockType === 'state' && field.name) {
       return {
         ...initialSchema,
-        [field.blockName]: '',
+        [field.name]: '',
       }
     }
   }, {})
