@@ -20,6 +20,7 @@ export type LayoutType = {
   backgroundColor?: Color;
   ctaBackgroundColor?: Color;
   richText?: RichTextType[];
+  displayBorder?: boolean;
   accentStyle?: 'one' | 'two';
   accentSize?: 'small' | 'medium' | 'large';
   accentMedia?: MediaType;
@@ -56,6 +57,7 @@ export type ContentBlockType = {
 // Accent Media Block
 ///////////////////////
 export type AccentMediaBlockType = {
+  displayBorder: boolean;
   backgroundColor: Color;
   accentStyle?: 'one' | 'two';
   accentSize?: 'small' | 'medium' | 'large';

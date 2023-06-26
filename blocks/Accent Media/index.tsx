@@ -10,6 +10,7 @@ import classes from './styles.module.scss';
 type Props = AccentMediaBlockType;
 
 const AccentMediaBlock: React.FC<Props> = ({
+  displayBorder,
   backgroundColor,
   accentStyle,
   accentSize,
@@ -34,7 +35,8 @@ const AccentMediaBlock: React.FC<Props> = ({
     cells.m = { cols: 3, start: 4 };
     cells.s = { cols: 5, start: 2 };
   }
-
+console.log('DISPLAY BORDER?', displayBorder)
+console.log('accent style', accentStyle)
   return (
     <div
       className={`${classes.wrapper} ${accentSize ? classes[accentSize] : ''}`}
@@ -57,7 +59,7 @@ const AccentMediaBlock: React.FC<Props> = ({
                 mimeType={accentMedia?.mimeType ? accentMedia?.mimeType : 'image/png'}
                 alt={accentMedia?.alt}
                 url={accentMedia?.url ? accentMedia?.url : ''}
-                clipMask={accentStyle ? accentStyle : 'one'}
+                clipMask={displayBorder && accentStyle ? accentStyle : undefined}
                 className={`${classes.media} ${accentSize ? classes[accentSize] : ''}`}
               />
             </Parallax>

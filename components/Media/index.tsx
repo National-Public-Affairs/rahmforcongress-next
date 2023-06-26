@@ -68,6 +68,19 @@ const Media: React.FC<Props> = ({
     );
   }
 
+  if (!clipMask) {
+    return (
+      <div className={`${className} ${classes.imgWrapper}`}>
+        <Image
+          className={`${className} ${classes.image}`}
+          src={url}
+          alt={altData}
+          fill
+        />
+      </div>
+    );
+  }
+
   return (
     <div className={`${className} ${classes.imgWrapper}`}>
       <Image

@@ -20,7 +20,6 @@ const RenderBlocks: React.FC<Props> = ({ layout, className }) => {
     >
       {
         layout.length > 0 && layout.map((block) => {
-          console.log('BLOCK', block.form);
           switch (block.blockType) {
             case 'content':
               return (
@@ -54,6 +53,7 @@ const RenderBlocks: React.FC<Props> = ({ layout, className }) => {
                   className={classes.section}
                 >
                   <AccentMediaBlock
+                    displayBorder={block.displayBorder ? true : false}
                     backgroundColor={block.backgroundColor ? block.backgroundColor : 'none'}
                     accentStyle={block.accentStyle}
                     accentSize={block.accentSize}
