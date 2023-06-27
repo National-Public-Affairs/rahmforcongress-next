@@ -5,6 +5,7 @@ import ContentBlock from '@/blocks/Content';
 import AccentMediaBlock from '@/blocks/Accent Media';
 import CtaBlock from '@/blocks/CallToAction';
 import FormBlock from '@/blocks/Form';
+import TwitterFeedBlock from '@/blocks/TwitterFeed';
 import classes from './styles.module.scss';
 
 type Props = {
@@ -76,9 +77,7 @@ const RenderBlocks: React.FC<Props> = ({ layout, className }) => {
               );
             case 'formBlock':
               return (
-                <section
-                  key={block.id}
-                >
+                <section key={block.id}>
                   {
                     block.form && (
                       <FormBlock
@@ -90,6 +89,16 @@ const RenderBlocks: React.FC<Props> = ({ layout, className }) => {
                       />
                     )
                   }
+                </section>
+              );
+            case 'twitterFeed':
+              return (
+                <section key={block.id}>
+                  <TwitterFeedBlock
+                    id={block.id}
+                    backgroundColor={block.backgroundColor ? block.backgroundColor : 'none'}
+                    richText={block?.richText}
+                  />
                 </section>
               );
             default:

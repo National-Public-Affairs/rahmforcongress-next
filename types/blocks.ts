@@ -9,7 +9,8 @@ export type BlockType =
   | 'formBlock'
   | 'mediaBlock'
   | 'archive'
-  | 'accentMediaBlock';
+  | 'accentMediaBlock'
+  | 'twitterFeed';
 
 export type LayoutType = {
   blockType: BlockType;
@@ -70,5 +71,14 @@ export type AccentMediaBlockType = {
 export type CtaBlockType = {
   styleType: 'bold' | 'subtle';
   ctaBackgroundColor: Color;
+  richText?: RichTextType[];
+}
+
+///////////////////////
+// Twitter Feed
+///////////////////////
+export type TwitterFeedBlockType = {
+  id: string;
+  backgroundColor: Color;
   richText?: RichTextType[];
 }

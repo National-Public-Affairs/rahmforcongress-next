@@ -1,0 +1,8 @@
+@import '../../styles/base.module.scss';
+
+.wrapper {
+  padding: base(5) 0;
+  @include large-break {
+    padding: base(2) 0;
+  }
+}
