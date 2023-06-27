@@ -18,13 +18,24 @@ const TwitterFeedBlock: React.FC<Props> = ({
     className={classes.wrapper}
     style={{ backgroundColor: colors[backgroundColor] }}
   >
-    {
-      richText && (
-        <RichText content={richText} />
-      )
-    }
     <GridContainer>
       <Grid>
+        <Cell
+          colsXL={6}
+          startXL={4}
+          colsL={8}
+          startL={3}
+          colsM={6}
+          startM={2}
+          colsS={8}
+          startS={1}
+        >
+          {
+            richText && (
+              <RichText content={richText} />
+            )
+          }
+        </Cell>
         <Cell
           colsXL={6}
           startXL={4}
