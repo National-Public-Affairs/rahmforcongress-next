@@ -10,9 +10,10 @@
 }
 
 .handle {
+  z-index: 1000;
   background-color: $user-purple;
-  width: 150;
-  height: 150;
+  width: 150px;
+  height: 150px;
   border-radius: 100%;
   position: absolute;
   transition: opacity 400ms ease, transform 300ms ease, left 900ms ease, right 900ms ease;
@@ -30,7 +31,7 @@
   }
 }
 
-.showHandle.handle {
+.showHandle > .handle {
   opacity: 1;
   transform: translate3d(-50%, -50%, 0) scale(1);
   transition: opacity 400ms ease, transform 300ms ease;
