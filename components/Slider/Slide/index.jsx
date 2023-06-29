@@ -9,7 +9,7 @@ const Slide = ({
   i,
   containerRef,
 }) => {
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef(null);
   const [resizeRef, resizeEntry] = useResize();
 
   const {
