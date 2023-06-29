@@ -1,0 +1,10 @@
+@import '../../styles/base.module.scss';
+
+.slide {
+  padding-right: base(2);
+  @include mid-break {
+    .image {
+      max-width: 60vw;
+    }
+  }
+}
