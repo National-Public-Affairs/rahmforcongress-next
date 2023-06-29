@@ -6,6 +6,9 @@ import AccentMediaBlock from '@/blocks/Accent Media';
 import CtaBlock from '@/blocks/CallToAction';
 import FormBlock from '@/blocks/Form';
 import TwitterFeedBlock from '@/blocks/TwitterFeed';
+import MediaSliderBlock from '@/blocks/Slider';
+import { SliderProvider } from '../Slider';
+
 import classes from './styles.module.scss';
 
 type Props = {
@@ -98,6 +101,16 @@ const RenderBlocks: React.FC<Props> = ({ layout, className }) => {
                     id={block.id}
                     backgroundColor={block.backgroundColor ? block.backgroundColor : 'none'}
                     richText={block?.richText}
+                  />
+                </section>
+              );
+            case 'slider':
+              console.log('SLIDER BLOCK', block)
+              block?.slides?.length > 0 && (
+                <section key={block.id}>
+                  <MediaSliderBlock
+                    backgroundColor={block.backgroundColor ? block.backgroundColor : 'none'}
+                    slides={block.slides ? block.slides : []}
                   />
                 </section>
               );
