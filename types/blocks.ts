@@ -10,7 +10,8 @@ export type BlockType =
   | 'mediaBlock'
   | 'archive'
   | 'accentMediaBlock'
-  | 'twitterFeed';
+  | 'twitterFeed'
+  | 'slider';
 
 export type LayoutType = {
   blockType: BlockType;
@@ -29,6 +30,7 @@ export type LayoutType = {
   enableIntro?: boolean;
   introContent: RichTextType;
   form?: FormType;
+  slides?: MediaSliderBlockType;
 };
 
 ///////////////////////
@@ -81,4 +83,16 @@ export type TwitterFeedBlockType = {
   id: string;
   backgroundColor: Color;
   richText?: RichTextType[];
+}
+
+///////////////////////
+// Media Slider
+///////////////////////
+export type Slide = {
+  media: MediaType;
+}
+
+export type MediaSliderBlockType = {
+  backgroundColor: Color;
+  slides: Slide[];
 }
