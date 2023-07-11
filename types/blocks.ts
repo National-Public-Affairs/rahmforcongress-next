@@ -30,7 +30,7 @@ export type LayoutType = {
   enableIntro?: boolean;
   introContent: RichTextType;
   form?: FormType;
-  slides?: MediaSliderBlockType;
+  slides?: Slide[];
 };
 
 ///////////////////////

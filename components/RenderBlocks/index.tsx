@@ -7,7 +7,6 @@ import CtaBlock from '@/blocks/CallToAction';
 import FormBlock from '@/blocks/Form';
 import TwitterFeedBlock from '@/blocks/TwitterFeed';
 import MediaSliderBlock from '@/blocks/Slider';
-import { SliderProvider } from '../Slider';
 
 import classes from './styles.module.scss';
 
@@ -106,7 +105,7 @@ const RenderBlocks: React.FC<Props> = ({ layout, className }) => {
               );
             case 'slider':
               console.log('SLIDER BLOCK', block)
-              block?.slides?.length > 0 && (
+              block?.slides && block?.slides?.length > 0 && (
                 <section key={block.id}>
                   <MediaSliderBlock
                     backgroundColor={block.backgroundColor ? block.backgroundColor : 'none'}
