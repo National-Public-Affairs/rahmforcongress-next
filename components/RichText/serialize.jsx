@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import escapeHTML from 'escape-html';
 import { Text } from 'slate';
+import RichTextLink from './Link';
 import { colors } from '@/styles/styles';
 import classes from './styles.module.scss';
 import typestyles from '../../styles/app.module.scss';
@@ -162,9 +163,15 @@ const serialize = (children) =>
         return <li key={i}>{serialize(node.children)}</li>;
       case 'link':
         return (
-          <a href={escapeHTML(node.url)} key={i}>
+          <RichTextLink
+            type={node.type}
+            linkType={node.linkType}
+            url={node?.url}
+            newTab={node.newTab}
+            doc={node?.doc}
+          >
             {serialize(node.children)}
-          </a>
+          </RichTextLink>
         );
 
       default:
