@@ -1,5 +1,6 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
-import Media from '@/components/Media';
+import Image from 'next/image';
 import SliderOnBackground from '@/components/Slider/OnBackground';
 import { useGridContainerWidth } from '@/components/layout/GridContainer';
 import type { MediaSliderBlockType } from '@/types/blocks';
@@ -19,13 +20,13 @@ const MediaSliderBlock: React.FC<Props> = ({ backgroundColor, slides }) => {
             <div
               key={idx}
               className={classes.slide}
-              style={{ maxWidth: gridContainerWidth }}
             >
-              <Media
+              <img
+                key={idx}
+                src={media.url}
+                alt={media.alt ? media.alt : 'Rahm for Congress'}
+                style={{ maxWidth: gridContainerWidth }}
                 className={classes.image}
-                url={media.url}
-                alt={media.alt}
-                mimeType={media.mimeType}
               />
             </div>
           ))
@@ -34,11 +35,7 @@ const MediaSliderBlock: React.FC<Props> = ({ backgroundColor, slides }) => {
     );
   }
 
-  return (
-    <div>
-
-    </div>
-  );
+  return <div />;
 };
 
 export default MediaSliderBlock;

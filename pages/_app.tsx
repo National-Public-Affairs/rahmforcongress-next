@@ -5,6 +5,7 @@ import { WindowInfoProvider } from '@faceless-ui/window-info';
 import { ScrollInfoProvider } from '@faceless-ui/scroll-info';
 import { GridProvider } from '@faceless-ui/css-grid';
 import { Toaster } from 'react-hot-toast';
+import { GridContainerWidthProvider } from '@/components/layout/GridContainer';
 import { breakpoints, zIndex, baseStyling } from '@/styles/styles';
 import type { FooterType, HeaderType, LegalType, SocialType } from '@/types/globals';
 import Header from '@/components/layout/Header';
@@ -57,36 +58,38 @@ function MyApp(appProps: AppProps): React.ReactElement {
           transTime={400}
         >
           <Toaster />
-          <GridProvider
-            rowGap={{
-              s: baseStyling.base(2),
-              m: baseStyling.base(2),
-              l: baseStyling.base(2),
-              xl: baseStyling.base(2),
-            }}
-            colGap={{
-              s: baseStyling.base(2),
-              m: baseStyling.base(2),
-              l: baseStyling.base(2),
-              xl: baseStyling.base(2),
-            }}
-            cols={{
-              s: 8,
-              m: 8,
-              l: 12,
-              xl: 12,
-            }}
-          >
-            <div className={`${classes.app} ${poppins.className}`}>
-              <Header header={header} social={socialMedia} />
-              <Component
-                {...pageProps}
-                footer={footer}
-                socialMedia={socialMedia}
-                legal={legal}
-              />
-            </div>
-          </GridProvider>
+          <GridContainerWidthProvider>
+            <GridProvider
+              rowGap={{
+                s: baseStyling.base(2),
+                m: baseStyling.base(2),
+                l: baseStyling.base(2),
+                xl: baseStyling.base(2),
+              }}
+              colGap={{
+                s: baseStyling.base(2),
+                m: baseStyling.base(2),
+                l: baseStyling.base(2),
+                xl: baseStyling.base(2),
+              }}
+              cols={{
+                s: 8,
+                m: 8,
+                l: 12,
+                xl: 12,
+              }}
+            >
+              <div className={`${classes.app} ${poppins.className}`}>
+                <Header header={header} social={socialMedia} />
+                <Component
+                  {...pageProps}
+                  footer={footer}
+                  socialMedia={socialMedia}
+                  legal={legal}
+                />
+              </div>
+            </GridProvider>
+          </GridContainerWidthProvider>
           <ModalContainer />
         </ModalProvider>
       </WindowInfoProvider>

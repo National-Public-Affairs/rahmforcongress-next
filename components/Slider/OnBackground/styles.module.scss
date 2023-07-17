@@ -21,10 +21,6 @@ $small: base(1);
   height: 100%;
 }
 
-.sliderWrap {
-
-}
-
 .slider {
   padding: $large $medium;
 
@@ -41,18 +37,55 @@ $small: base(1);
   }
 }
 
+// .track {
+//   position: relative;
+//   top: 0;
+//   bottom: 100%;
+//   height: 3px;
+//   width: base(11);
+//   background-color: $user-purple;
+
+//   @include mid-break {
+//     width: base(9);
+//   }
+
+//   @include small-break {
+//     width: base(3);
+//   }
+// }
+
 .track {
   position: relative;
+  height: 1px;
+  margin-right: base(11);
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: base(-11);
+    bottom: 0;
+    left: 0;
+    background-color: $user-purple;
+    opacity: 0.5;
+    @include mid-break {
+      margin-right: base(3);
+      &::before {
+        right: base(-3);
+      }
+    }
+  }
+}
+
+.indicator {
+  position: absolute;
   top: 0;
   bottom: 100%;
   height: 3px;
   width: base(11);
-  background-color: $user-purple;
-
+  background-color: $user-dark-purple;
   @include mid-break {
     width: base(9);
   }
-
   @include small-break {
     width: base(3);
   }

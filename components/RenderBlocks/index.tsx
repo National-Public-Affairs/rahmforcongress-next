@@ -104,15 +104,14 @@ const RenderBlocks: React.FC<Props> = ({ layout, className }) => {
                 </section>
               );
             case 'slider':
-              console.log('SLIDER BLOCK', block)
-              block?.slides && block?.slides?.length > 0 && (
+              return (
                 <section key={block.id}>
                   <MediaSliderBlock
                     backgroundColor={block.backgroundColor ? block.backgroundColor : 'none'}
                     slides={block.slides ? block.slides : []}
                   />
                 </section>
-              );
+              )
             default:
               break;
           }

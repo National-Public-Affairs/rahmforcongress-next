@@ -1,10 +1,20 @@
 @import '../../styles/base.module.scss';
 
 .slide {
+  max-width: 70vw;
+  max-height: 40vh;
   padding-right: base(2);
-  @include mid-break {
-    .image {
-      max-width: 60vw;
-    }
+  overflow: hidden;
+  @include grid-center-parent;
+}
+
+.image {
+  max-height: 800px;
+  @include grid-center-child;
+}
+
+@include mid-break {
+  .image {
+    max-width: 60vw;
   }
 }
