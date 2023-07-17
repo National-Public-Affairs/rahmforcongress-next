@@ -27,8 +27,7 @@ export const FormBlock: React.FC<
       redirect,
     }
   } = props;
-console.log('FORM FROM PROPS', formFromProps.fields)
-console.log('INITIAL FORM STATE', buildInitialFormState(formFromProps.fields))
+
   const formMethods = useForm({
     defaultValues: buildInitialFormState(formFromProps.fields),
   });
@@ -59,7 +58,7 @@ console.log('INITIAL FORM STATE', buildInitialFormState(formFromProps.fields))
           field: name,
           value,
         }));
-        console.log('data to send', dataToSend)
+
         try {
           await fetch('/api/submitForm', {
             method: 'POST',
