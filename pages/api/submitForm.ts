@@ -12,8 +12,15 @@ export default async function handler(
 ) {
   console.log('REQ BODY', req.body);
 
+  const sanitizedData = req.body.submissionData.filter((datum: {
+    field: string;
+    value: string;
+  }) => datum.value);
+
+  console.log('Sanitized data', sanitizedData);
+
   try {
-    await fetch(
+    const submission = await fetch(
       `${process.env.NEXT_PUBLIC_SERVER_URL}/api/form-submissions`,
       {
         method: 'POST',
@@ -23,6 +30,10 @@ export default async function handler(
         body: JSON.stringify(req.body),
       }
     );
+
+    if (!submission.ok) {
+      throw new Error(`${submission.status + ' | '}There was a problem`);
+    }
     
     res.status(200).json({ status: true });
   } catch (e) {

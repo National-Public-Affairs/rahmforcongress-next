@@ -61,7 +61,7 @@ console.log('INITIAL FORM STATE', buildInitialFormState(formFromProps.fields))
         }));
         console.log('data to send', dataToSend)
         try {
-          await fetch('/api/submitForm', {
+          await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/form-submissions`, {
             method: 'POST',
             headers: {
               'Accept': 'application/json',
