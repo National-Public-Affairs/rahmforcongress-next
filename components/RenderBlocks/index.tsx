@@ -9,6 +9,7 @@ import TwitterFeedBlock from '@/blocks/TwitterFeed';
 import MediaSliderBlock from '@/blocks/Slider';
 
 import classes from './styles.module.scss';
+import NewsBlock from '@/blocks/News';
 
 type Props = {
   layout: LayoutType[];
@@ -112,6 +113,12 @@ const RenderBlocks: React.FC<Props> = ({ layout, className }) => {
                   />
                 </section>
               )
+            case 'newsBlock':
+              return (
+                <section key={block.id}>
+                  <NewsBlock />
+                </section>
+              );
             default:
               break;
           }
