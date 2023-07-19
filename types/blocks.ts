@@ -1,6 +1,7 @@
 import { Color } from '@/styles/styles';
 import type { LinkType, MediaType, RichTextType } from './fields';
-import type { FormBlockType, FormType } from '@/blocks/Form/types';
+import type { FormType } from '@/blocks/Form/types';
+import { NewsType } from './collections';
 
 export type BlockType =
   | 'content'
@@ -11,7 +12,8 @@ export type BlockType =
   | 'archive'
   | 'accentMediaBlock'
   | 'twitterFeed'
-  | 'slider';
+  | 'slider'
+  | 'newsBlock';
 
 export type LayoutType = {
   blockType: BlockType;
@@ -31,7 +33,10 @@ export type LayoutType = {
   introContent: RichTextType;
   form?: FormType;
   slides?: Slide[];
+  display?: boolean;
 };
+
+
 
 ///////////////////////
 // Donation Block
@@ -42,11 +47,15 @@ export type DonationBlockType = {
   options?: DonationOptionType[];
 }
 
+
+
 export type DonationOptionType = {
   id: string;
   amount: number;
   link: LinkType;
 }
+
+
 
 ///////////////////////
 // Content Block
@@ -55,6 +64,8 @@ export type ContentBlockType = {
   backgroundColor: Color;
   richText: RichTextType[];
 }
+
+
 
 ///////////////////////
 // Accent Media Block
@@ -67,6 +78,8 @@ export type AccentMediaBlockType = {
   accentMedia?: MediaType;
 }
 
+
+
 ///////////////////////
 // Call-to-Action
 ///////////////////////
@@ -76,6 +89,8 @@ export type CtaBlockType = {
   richText?: RichTextType[];
 }
 
+
+
 ///////////////////////
 // Twitter Feed
 ///////////////////////
@@ -84,6 +99,8 @@ export type TwitterFeedBlockType = {
   backgroundColor: Color;
   richText?: RichTextType[];
 }
+
+
 
 ///////////////////////
 // Media Slider
@@ -95,4 +112,13 @@ export type Slide = {
 export type MediaSliderBlockType = {
   backgroundColor: Color;
   slides: Slide[];
+}
+
+
+
+///////////////////////
+// News
+///////////////////////
+export type NewsBlockType = {
+  display: boolean;
 }
