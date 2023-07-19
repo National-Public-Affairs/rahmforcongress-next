@@ -1,6 +1,6 @@
 import { GetServerSideProps } from 'next';
 import type { PageQueryType } from '@/types/collections';
-import NotFound from '@/components/NotFound';
+import Error from '@/components/Error';
 import Template from '@/components/layout/Template';
 import Head from '@/components/Head';
 import Hero from '@/components/layout/PageHero';
@@ -22,7 +22,9 @@ const Page: React.FC<Props> = ({
   socialMedia,
 }) => {
   if (!page || page.totalPages < 1) {
-    return <NotFound />;
+    return (
+      <Error status={404} message="Page not found" />
+    );
   }
 
   const pageData = page.docs[0];
