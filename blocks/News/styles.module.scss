@@ -1,0 +1,11 @@
+@import '../../styles/base.module.scss';
+
+.loading {
+  width: 100%;
+  min-height: 30vh;
+  @include grid-center-parent;
+}
+
+.spinner {
+  @include grid-center-child;
+}
