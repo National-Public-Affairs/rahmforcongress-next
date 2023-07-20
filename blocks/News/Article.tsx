@@ -10,10 +10,10 @@ type Props = {
 const Article: React.FC<Props> = ({ data }) => {
   return (
     <div>
-      <Media
+      {/* <Media
         mimeType={data.media.mimeType}
         url={data.media.url}
-      />
+      /> */}
       <h4>{data.title}</h4>
       <p>{data.description}</p>
     </div>
