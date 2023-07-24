@@ -67,6 +67,7 @@ const NewsBlock: React.FC = () => {
             startM={2}
             colsS={8}
             startS={1}
+            className={classes.articles}
           >
             {
               news?.docs?.map((article) => (

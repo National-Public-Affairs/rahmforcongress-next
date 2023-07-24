@@ -10,6 +10,13 @@
   @include grid-center-child;
 }
 
+.articles {
+  margin: base(2) 0;
+  @include large-break {
+    margin: 0;
+  }
+}
+
 .articleLink {
   text-decoration: none;
 }
