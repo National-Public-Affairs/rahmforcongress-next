@@ -1,5 +1,6 @@
-import type { MetaType, HeroType, BannerType, MediaType } from './fields';
+import type { MetaType, HeroType, BannerType, MediaType, LinkType } from './fields';
 import type { LayoutType } from './blocks';
+import { Color } from '@/styles/styles';
 
 export type PageType = {
   id: string;
@@ -22,6 +23,11 @@ export type NewsType = {
   media: MediaType;
   title: string;
   description: string;
+  backgroundColor: Color;
+  links: {
+    id: string;
+    link: LinkType;
+  }[];
 }
 
 export type NewsQueryType = {
