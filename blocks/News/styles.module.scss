@@ -9,3 +9,43 @@
 .spinner {
   @include grid-center-child;
 }
+
+.articleLink {
+  text-decoration: none;
+}
+
+.article {
+  min-height: 40vh;
+  margin-bottom: base(2);
+  padding: base(2);
+  background-color: $user-dark-purple;
+  box-shadow: inset 0 0 0 3px $user-dark-purple;
+  transition: all $transition-default ease-in-out;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  &:active {
+    outline: 0;
+  }
+  &:focus {
+    outline: 0;
+  }
+  &:hover {
+    opacity: 0.95;
+    box-shadow: inset 0 0 0 3px $user-white;
+  }
+}
+
+.imageWrapper {
+  padding: base(1);
+  background-color: white;
+  @include grid-center-parent;
+}
+
+.logo {
+  @include grid-center-child;
+}
+
+.description {
+  height: 100%;
+}

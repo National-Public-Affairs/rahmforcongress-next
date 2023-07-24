@@ -61,7 +61,13 @@ const NewsBlock: React.FC = () => {
     <div>
       <GridContainer>
         <Grid>
-          <Cell>
+          <Cell
+            cols={6}
+            start={4}
+            startM={2}
+            colsS={8}
+            startS={1}
+          >
             {
               news?.docs?.map((article) => (
                 <div key={article.id}>
