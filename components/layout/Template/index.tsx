@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Footer from '../Footer';
 import { FooterType, LegalType, SocialType } from '@/types/globals';
 import classes from './styles.module.scss';
@@ -15,17 +15,23 @@ const Template: React.FC<Props> = ({
   socialMedia,
   legal,
   children,
-}) => (
-  <>
-    <div className={classes.wrapper}>
-      {children}
-    </div>
-    <Footer
-      footer={footer}
-      socialMedia={socialMedia}
-      legal={legal}
-    />
-  </>
-);
+}) => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, [children]);
+
+  return (
+    <>
+      <div className={classes.wrapper}>
+        {children}
+      </div>
+      <Footer
+        footer={footer}
+        socialMedia={socialMedia}
+        legal={legal}
+      />
+    </>
+  );
+};
 
 export default Template;
