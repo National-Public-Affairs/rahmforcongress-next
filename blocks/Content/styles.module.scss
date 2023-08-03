@@ -5,8 +5,8 @@
   color: $user-white;
 }
 
-@include small-break {
+@include large-break {
   .wrapper {
-    padding: base(2) 0;
+    padding: 0;
   }
 }

@@ -4,16 +4,16 @@
   max-width: $grid-container-width;
   margin-left: auto;
   margin-right: auto;
-}
 
-@include large-break {
-  .gridContainer {
+  @include large-break {
     padding: base(1.5);
   }
-}
 
-@include mid-break {
-  .gridContainer {
+  @include mid-break {
     padding: base(2);
+  }
+
+  @include small-break {
+    padding: base(1) base(2);
   }
 }
