@@ -2,7 +2,7 @@
 @import '../../../styles/app.module.scss';
 
 .header {
-  padding: base(1) base(2);
+  padding: base(0.25) base(2);
   background-color: $user-purple;
   z-index: $zindex-header;
   position: fixed;
@@ -10,6 +10,10 @@
   left: 0;
   right: 0;
   box-shadow: $box-shadow;
+
+  @include small-break {
+    padding: 0 base(0);
+  }
 }
 
 .headerContent {
@@ -22,7 +26,12 @@
 }
 
 .logo {
+  width: base(11);
   pointer-events: all;
+
+  @include small-break {
+    width: base(7);
+  }
 }
 
 .navOptions {
