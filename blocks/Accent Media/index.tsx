@@ -35,8 +35,7 @@ const AccentMediaBlock: React.FC<Props> = ({
     cells.m = { cols: 3, start: 4 };
     cells.s = { cols: 5, start: 2 };
   }
-console.log('DISPLAY BORDER?', displayBorder)
-console.log('accent style', accentStyle)
+
   return (
     <div
       className={`${classes.wrapper} ${accentSize ? classes[accentSize] : ''}`}
