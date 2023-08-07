@@ -1,7 +1,6 @@
 import { Color } from '@/styles/styles';
 import type { LinkType, MediaType, RichTextType } from './fields';
 import type { FormType } from '@/blocks/Form/types';
-import { NewsType } from './collections';
 
 export type BlockType =
   | 'content'
@@ -13,7 +12,8 @@ export type BlockType =
   | 'accentMediaBlock'
   | 'twitterFeed'
   | 'slider'
-  | 'newsBlock';
+  | 'newsBlock'
+  | 'twoColumn';
 
 export type LayoutType = {
   blockType: BlockType;
@@ -34,6 +34,7 @@ export type LayoutType = {
   form?: FormType;
   slides?: Slide[];
   display?: boolean;
+  twoColumn?: TwoColumnContentType[];
 };
 
 
@@ -122,3 +123,21 @@ export type MediaSliderBlockType = {
 export type NewsBlockType = {
   display: boolean;
 }
+
+///////////////////////
+// Two-Column
+///////////////////////
+export type TwoColumnBlockType = {
+  backgroundColor: Color;
+  twoColumn: TwoColumnContentType[];
+}
+
+type TwoColumnContentType =
+  | ({
+      id: string;
+      contentType: 'media';
+    } & AccentMediaBlockType)
+  | {
+      id: string;
+      contentType: 'richText';
+    } & RichTextType;

@@ -7,6 +7,7 @@ import CtaBlock from '@/blocks/CallToAction';
 import FormBlock from '@/blocks/Form';
 import TwitterFeedBlock from '@/blocks/TwitterFeed';
 import MediaSliderBlock from '@/blocks/Slider';
+import TwoColumnBlock from '@/blocks/TwoColumn';
 
 import classes from './styles.module.scss';
 import NewsBlock from '@/blocks/News';
@@ -117,6 +118,15 @@ const RenderBlocks: React.FC<Props> = ({ layout, className }) => {
               return (
                 <section key={block.id}>
                   <NewsBlock />
+                </section>
+              );
+            case 'twoColumn':
+              return (
+                <section key={block.id}>
+                  <TwoColumnBlock
+                    backgroundColor={block.backgroundColor ? block.backgroundColor : 'none'}
+                    twoColumn={block?.twoColumn ? block?.twoColumn : []}
+                  />
                 </section>
               );
             default:
