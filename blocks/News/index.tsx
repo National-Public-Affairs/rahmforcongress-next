@@ -22,7 +22,6 @@ const NewsBlock: React.FC = () => {
       const news = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/news`)
         .then(res => res.json());
         
-      console.log('NEWS', news)
       setNews(news);
       setLoading(false);
     };
