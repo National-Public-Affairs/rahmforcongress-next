@@ -29,7 +29,7 @@ const Page: React.FC<Props> = ({
 
   const pageData = page.docs[0];
   const { meta, hero, layout, banner } = pageData;
-
+  console.log('PAGE LAYOUT', layout)
   return (
     <Template
       footer={footer}
@@ -69,7 +69,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const slug = ctx.params?.slug ? (ctx.params.slug as string[]).join('/') : 'home';
 
   const pageQuery = await fetch(
-    `${process.env.NEXT_PUBLIC_SERVER_URL}/api/pages?where[slug][equals]=${slug}`
+    `${process.env.NEXT_PUBLIC_SERVER_URL}/api/pages?where[slug][equals]=${slug}&depth=10`
   ).then((res) => res.json());
 
   if (!pageQuery || pageQuery.totalDocs === 0) {
