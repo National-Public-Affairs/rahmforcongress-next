@@ -1,6 +1,7 @@
 @import '../../../styles/app.module.scss';
 
 .text {
+  z-index: -1;
   @include h1;
 }
 
