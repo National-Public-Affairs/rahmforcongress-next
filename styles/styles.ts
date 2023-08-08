@@ -1,17 +1,17 @@
 export const breakpoints = {
-  xs: '480',
-  s: '600',
-  m: '850',
-  l: '1120',
-  xl: '1680',
-  xxl: '1920',
-};
+  xs: 480,
+  s: 600,
+  m: 850,
+  l: 1120,
+  xl: 1680,
+  xxl: 1920,
+} as const;
 
 export const zIndex = {
   page: 10,
   modal: 20,
   header: 30,
-};
+} as const;
 
 export const baseStyling = {
   htmlFontSize: 18,
@@ -26,6 +26,6 @@ export const colors = {
   white: '#FFFFFF',
   gray: '#8F8F8F',
   none: 'rgba(0,0,0,0)',
-};
+} as const;
 
 export type Color = 'purple' | 'darkPurple' | 'yellow' | 'white' | 'gray' | 'none';
