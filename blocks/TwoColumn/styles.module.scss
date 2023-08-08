@@ -1,0 +1,29 @@
+@import '../../styles/base.module.scss';
+
+.grid {
+  padding: base(2) 0;
+  display: grid;
+  grid-template: auto / repeat(2, 1fr);
+  gap: base(2);
+
+  @include small-break {
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid > * {
+  justify-self: center;
+  align-self: center;
+}
+
+.media {
+  z-index: 0;
+}
+
+.cta {
+  z-index: 1;
+}
+
+.richText {
+  z-index: 1;
+}
