@@ -8,31 +8,46 @@ import PolygonTwo from '@/components/graphics/Polygons/PolygonTwo';
 import { colors } from '@/styles/styles';
 import classes from './styles.module.scss';
 
-type Props = CtaBlockType;
+type Props = {
+  className?: string;
+  standalone?: boolean;
+} & CtaBlockType;
 
 const CtaBlock: React.FC<Props> = ({
   styleType,
   ctaBackgroundColor,
   richText,
+  className,
+  standalone,
 }) => (
   <div
     style={{ backgroundColor: colors[ctaBackgroundColor] }}
-    className={classes.wrapper}
+    className={[classes.wrapper, className].filter(Boolean).join(' ')}
   >
-    <GridContainer className={classes.cta}>
-      <Grid>
-        <Cell
-          cols={4}
-          start={5}
-          colsL={5}
-          startM={3}
-          colsS={8}
-          startS={2}
-        >
-          <RichText content={richText} />
-        </Cell>
-      </Grid>
-    </GridContainer>
+    {
+      standalone
+        ? (
+          <div className={classes.cta}>
+            <RichText content={richText} />
+          </div>
+        )
+        : (
+          <GridContainer className={classes.cta}>
+            <Grid>
+              <Cell
+                cols={4}
+                start={5}
+                colsL={5}
+                startM={3}
+                colsS={8}
+                startS={2}
+              >
+                <RichText content={richText} />
+              </Cell>
+            </Grid>
+          </GridContainer>
+        )
+    }
     {
       styleType === 'bold' && (
         <PolygonTwo
