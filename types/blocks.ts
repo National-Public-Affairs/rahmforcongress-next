@@ -132,12 +132,9 @@ export type TwoColumnBlockType = {
   twoColumn: TwoColumnContentType[];
 }
 
-type TwoColumnContentType =
-  | ({
-      id: string;
-      contentType: 'media';
-    } & AccentMediaBlockType)
-  | {
-      id: string;
-      contentType: 'richText';
-    } & RichTextType;
+type TwoColumnContentType = {
+  id: string;
+  contentType: 'media' | 'richText' | 'cta';
+  richText?: any;
+  type?: 'bold' | 'subtle';
+} & AccentMediaBlockType;
