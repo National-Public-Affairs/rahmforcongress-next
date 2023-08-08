@@ -56,7 +56,7 @@
 @mixin h4 {
   @include headingWeight;
   font-size: base(2.75);
-  line-height: base(3.25);
+  line-height: base(3);
   margin: base(1.5) 0;
 }
 
@@ -92,6 +92,13 @@
   line-height: base(1.3);
   letter-spacing: 2.5px;
   text-transform: uppercase;
+}
+
+@include extra-large-break {
+  .h4 {
+    font-size: base(2.75);
+    line-height: base(2.75);
+  }
 }
 
 @include mid-break {
