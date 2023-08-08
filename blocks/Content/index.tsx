@@ -22,8 +22,8 @@ const ContentBlock: React.FC<Props> = ({
     <GridContainer>
       <Grid>
         <Cell
-          colsXL={4}
-          startXL={5}
+          colsXL={6}
+          startXL={4}
           colsL={8}
           startL={3}
           colsM={6}

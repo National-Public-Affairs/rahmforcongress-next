@@ -50,6 +50,7 @@ function MyApp(appProps: AppProps): React.ReactElement {
           m: `(max-width: ${breakpoints.m}px)`,
           l: `(max-width: ${breakpoints.l}px)`,
           xl: `(max-width: ${breakpoints.xl}px)`,
+          xxl: `(max-width: ${breakpoints.xxl}px)`,
         }}
       >
         <ModalProvider

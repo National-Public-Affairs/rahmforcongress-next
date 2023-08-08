@@ -60,8 +60,8 @@ const TwoColumnBlock: React.FC<Props> = ({
       <GridContainer>
         <Grid>
           <Cell
-            cols={6}
-            start={4}
+            colsXL={8}
+            startXL={3}
             colsL={8}
             startL={3}
             colsM={8}
