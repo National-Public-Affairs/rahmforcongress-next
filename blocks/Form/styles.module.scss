@@ -9,6 +9,11 @@
   box-shadow: $box-shadow;
   display: flex;
   flex-direction: column;
+
+  @include small-break {
+    width: 100%;
+    margin: base(6) 0;
+  }
 }
 
 .hasSubmitted {

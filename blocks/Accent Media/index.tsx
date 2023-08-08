@@ -1,13 +1,21 @@
-import React from 'react';
-import { AccentMediaBlockType } from '@/types/blocks';
+import React, { useEffect, useState } from 'react';
+import { Cell, Grid } from '@faceless-ui/css-grid';
+import { useWindowInfo } from '@faceless-ui/window-info';
+
+import type { AccentMediaBlockType } from '@/types/blocks';
+
+import { breakpoints } from '@/styles/styles';
+
 import Parallax from '@/components/Parallax';
 import GridContainer from '@/components/layout/GridContainer';
-import { Cell, Grid } from '@faceless-ui/css-grid';
 import Media from '@/components/Media';
+
 import { colors } from '@/styles/styles';
 import classes from './styles.module.scss';
 
-type Props = AccentMediaBlockType;
+type Props = {
+  className?: string;
+} & AccentMediaBlockType;
 
 const AccentMediaBlock: React.FC<Props> = ({
   displayBorder,
@@ -15,7 +23,14 @@ const AccentMediaBlock: React.FC<Props> = ({
   accentStyle,
   accentSize,
   accentMedia,
+  className,
 }) => {
+  const windowInfo = useWindowInfo();
+  const [currentWidth, updateWidth] = useState(0);
+  useEffect(() => {
+    updateWidth(windowInfo?.width ? windowInfo?.width : 0);
+  }, [windowInfo]);
+console.log('WINDOW WIDTH', currentWidth)
   let cells = {
     xl: { cols: 12, start: 1 },
     l: { cols: 10, start: 3 },
@@ -38,7 +53,7 @@ const AccentMediaBlock: React.FC<Props> = ({
 
   return (
     <div
-      className={`${classes.wrapper} ${accentSize ? classes[accentSize] : ''}`}
+      className={`${classes.wrapper} ${accentSize ? classes[accentSize] : ''} ${className}`}
       style={{ backgroundColor: colors[backgroundColor] }}
     >
       <GridContainer className={classes.grid}>
@@ -53,7 +68,7 @@ const AccentMediaBlock: React.FC<Props> = ({
             colsS={cells.s.cols}
             startS={cells.s.start}
           >
-            <Parallax yDistance={100}>
+            <Parallax yDistance={currentWidth > breakpoints.s ? -100 : -20}>
               <Media
                 mimeType={accentMedia?.mimeType ? accentMedia?.mimeType : 'image/png'}
                 alt={accentMedia?.alt}
