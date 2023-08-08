@@ -8,6 +8,9 @@ import { colors } from '@/styles/styles';
 import GridContainer from '@/components/layout/GridContainer';
 import RichText from '@/components/RichText';
 import AccentMediaBlock from '../Accent Media';
+import CtaBlock from '../CallToAction';
+
+import classes from './styles.module.scss';
 
 type Props = TwoColumnBlockType;
 
@@ -19,13 +22,30 @@ const TwoColumnBlock: React.FC<Props> = ({
     switch (block.contentType) {
       case 'media':
         return (
-          <div key={block.id}>
+          <div key={block.id} className={classes.media}>
             <AccentMediaBlock
               displayBorder={block.displayBorder}
               backgroundColor={block.backgroundColor}
               accentStyle={block.accentStyle}
-              accentSize={block.accentSize}
+              accentSize="large"
               accentMedia={block.accentMedia}
+            />
+          </div>
+        );
+      case 'richText':
+        return (
+          <div key={block.id} className={classes.richText}>
+            <RichText content={block.richText} />
+          </div>
+        );
+      case 'cta':
+        return (
+          <div key={block.id} className={classes.cta}>
+            <CtaBlock
+              styleType={block.type ? block.type : 'bold'}
+              ctaBackgroundColor={block.backgroundColor}
+              richText={block.richText}
+              standalone
             />
           </div>
         );
@@ -39,7 +59,15 @@ const TwoColumnBlock: React.FC<Props> = ({
     <div style={{ backgroundColor: colors[backgroundColor] }}>
       <GridContainer>
         <Grid>
-          <Cell>
+          <Cell
+            cols={6}
+            start={4}
+            colsL={8}
+            startL={3}
+            colsM={8}
+            startM={1}
+            className={classes.grid}
+          >
             {renderColumns}
           </Cell>
         </Grid>
