@@ -1,4 +1,4 @@
-import { Color } from '@/styles/styles';
+import type { Color } from '@/styles/styles';
 import type { LinkType, MediaType, RichTextType } from './fields';
 import type { FormType } from '@/blocks/Form/types';
 
