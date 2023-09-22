@@ -1,3 +1,9 @@
-.section {
-  
+@import '../../styles/base.module.scss';
+
+.formBlock {
+  padding: base(6) 0;
+
+  @include small-break {
+    padding: 0;
+  }
 }

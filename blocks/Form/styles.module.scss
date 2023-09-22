@@ -3,7 +3,7 @@
 .form {
   width: 80%;
   max-width: 1000px;
-  margin: base(6) auto;
+  margin: auto;
   padding: base(3);
   background-color: $user-purple;
   box-shadow: $box-shadow;
@@ -12,7 +12,6 @@
 
   @include small-break {
     width: 100%;
-    margin: base(6) 0;
   }
 }
 
