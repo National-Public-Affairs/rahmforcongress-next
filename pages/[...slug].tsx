@@ -29,7 +29,7 @@ const Page: React.FC<Props> = ({
 
   const pageData = page.docs[0];
   const { meta, hero, layout, banner } = pageData;
-  console.log('PAGE LAYOUT', layout)
+
   return (
     <Template
       footer={footer}
