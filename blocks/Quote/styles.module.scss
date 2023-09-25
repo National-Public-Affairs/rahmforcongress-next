@@ -1,0 +1,25 @@
+@import '../../styles/base.module.scss';
+
+.wrapper {
+  text-align: center;
+  @include grid-center-parent;
+}
+
+.content {
+  @include grid-center-child;
+  z-index: 1;
+  padding: base(10) 0;
+
+  @include mid-break {
+    padding: base(8) 0;
+  }
+}
+
+.mediaWrapper {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: stretch;
+  align-self: stretch;
+  z-index: 0;
+  background-color: red;
+}
