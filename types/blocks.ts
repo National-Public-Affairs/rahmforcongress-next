@@ -2,6 +2,8 @@ import type { Color } from '@/styles/styles';
 import type { LinkType, MediaType, RichTextType } from './fields';
 import type { FormType } from '@/blocks/Form/types';
 
+import { gradients } from '@/styles/styles';
+
 export type BlockType =
   | 'content'
   | 'donation'
@@ -13,7 +15,8 @@ export type BlockType =
   | 'twitterFeed'
   | 'slider'
   | 'newsBlock'
-  | 'twoColumn';
+  | 'twoColumn'
+  | 'quote';
 
 export type LayoutType = {
   blockType: BlockType;
@@ -22,6 +25,7 @@ export type LayoutType = {
   cta?: string;
   options?: DonationOptionType[];
   backgroundColor?: Color;
+  backgroundMedia?: MediaType[];
   ctaBackgroundColor?: Color;
   richText?: RichTextType[];
   displayBorder?: boolean;
@@ -138,3 +142,13 @@ type TwoColumnContentType = {
   richText?: any;
   type?: 'bold' | 'subtle';
 } & AccentMediaBlockType;
+
+///////////////////////
+// Quote
+///////////////////////
+export type QuoteBlockType = {
+  id: string;
+  backgroundColor: keyof typeof gradients;
+  richText?: any;
+  backgroundMedia: MediaType[];
+};
