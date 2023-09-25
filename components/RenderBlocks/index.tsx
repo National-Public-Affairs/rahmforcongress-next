@@ -9,6 +9,7 @@ import ContentBlock from '@/blocks/Content';
 import AccentMediaBlock from '@/blocks/Accent Media';
 import CtaBlock from '@/blocks/CallToAction';
 import FormBlock from '@/blocks/Form';
+import QuoteBlock from '@/blocks/Quote';
 import TwitterFeedBlock from '@/blocks/TwitterFeed';
 import MediaSliderBlock from '@/blocks/Slider';
 import TwoColumnBlock from '@/blocks/TwoColumn';
@@ -103,6 +104,17 @@ const RenderBlocks: React.FC<Props> = ({ layout, className }) => {
                       />
                     )
                   }
+                </section>
+              );
+            case 'quote':
+              return (
+                <section key={block.id}>
+                  <QuoteBlock
+                    id={block.id}
+                    backgroundColor={block.backgroundColor ? block.backgroundColor : 'darkPurple'}
+                    backgroundMedia={block.backgroundMedia ? block.backgroundMedia : []}
+                    richText={block.richText}
+                  />
                 </section>
               );
             case 'twitterFeed':
