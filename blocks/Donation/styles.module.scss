@@ -1,11 +1,21 @@
 @import '../../styles/base.module.scss';
 
-.wrap {
+.wrapper {
   position: relative;
   z-index: 1;
-  @include maxWidth;
-  margin: base(5) auto 0 auto;
+  margin: base(3) auto 0 auto;
+  padding: base(5) 0;
   color: $user-white;
+
+  @include mid-break {
+    margin: base(1) auto 0 auto;
+    padding: base(2) 0;
+  }
+}
+
+.gridContainer {
+  position: relative;
+  padding: 0 0 base(2) 0;
 }
 
 .cta {
@@ -21,13 +31,25 @@
   left: 0;
   right: 0;
   z-index: -10;
-  background-color: $user-dark-purple;
   @include grid-center-parent;
 }
 
 .polygon {
   @include grid-center-child;
   height: 175%;
+  max-height: base(10);
+
+  @include mid-break {
+    max-height: base(8);
+  }
+
+  @include small-break {
+    max-height: base(6);
+  }
+
+  @include extra-small-break {
+    max-height: base(4);
+  }
 }
 
 .optionsWrapper {
@@ -47,7 +69,6 @@
   @include grid-center-child;
   z-index: 1;
   text-decoration: none;
-  color: $user-white;
   &::before {
     content: '$'
   }

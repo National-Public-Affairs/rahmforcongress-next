@@ -54,7 +54,6 @@ const TwoColumnBlock: React.FC<Props> = ({
     }
   })
 
-  console.log('TWO COLUMN DATA', twoColumn)
   return (
     <div style={{ backgroundColor: colors[backgroundColor] }}>
       <GridContainer>

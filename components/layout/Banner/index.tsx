@@ -28,7 +28,7 @@ const Banner: React.FC<Props> = ({
         url={link.url}
         className={classes.link}
         newTab={newTab}
-        textColor={textColor}
+        textColor={textColor ? colors[textColor] : '#FFFFFF'}
       />
     </div>
   )

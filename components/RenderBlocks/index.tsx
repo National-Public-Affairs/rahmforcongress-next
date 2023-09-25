@@ -1,5 +1,9 @@
 import React from 'react';
+
 import type { LayoutType } from '@/types/blocks';
+
+import { colors } from '@/styles/styles';
+
 import DonationBlock from '@/blocks/Donation';
 import ContentBlock from '@/blocks/Content';
 import AccentMediaBlock from '@/blocks/Accent Media';
@@ -8,9 +12,9 @@ import FormBlock from '@/blocks/Form';
 import TwitterFeedBlock from '@/blocks/TwitterFeed';
 import MediaSliderBlock from '@/blocks/Slider';
 import TwoColumnBlock from '@/blocks/TwoColumn';
+import NewsBlock from '@/blocks/News';
 
 import classes from './styles.module.scss';
-import NewsBlock from '@/blocks/News';
 
 type Props = {
   layout: LayoutType[];
@@ -81,7 +85,13 @@ const RenderBlocks: React.FC<Props> = ({ layout, className }) => {
               );
             case 'formBlock':
               return (
-                <section key={block.id}>
+                <section
+                  key={block.id}
+                  className={classes.formBlock}
+                  style={{
+                    backgroundColor: block.backgroundColor ? colors[block.backgroundColor] : 'transparent',
+                  }}
+                >
                   {
                     block.form && (
                       <FormBlock

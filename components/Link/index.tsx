@@ -8,7 +8,7 @@ import classes from './styles.module.scss';
 
 type Props = {
   className?: string;
-  textColor?: Color;
+  textColor?: typeof colors[Color];
 } & LinkType;
 
 const CMSLink: React.FC<Props> = ({
@@ -30,7 +30,7 @@ const CMSLink: React.FC<Props> = ({
       >
         <a
           className={[classes.link, className].filter(Boolean).join(' ')}
-          style={{ color: textColor?  colors[textColor] : 'white' }}
+          style={{ color: textColor ?  textColor : 'white' }}
         >
           {label}
         </a>
@@ -42,6 +42,7 @@ const CMSLink: React.FC<Props> = ({
     <a
       href={url}
       className={[classes.link, className].filter(Boolean).join(' ')}
+      style={{ color: textColor ? textColor : 'white' }}
     >
       {label}
     </a>
