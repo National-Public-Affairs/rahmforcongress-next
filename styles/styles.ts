@@ -29,3 +29,16 @@ export const colors = {
 } as const;
 
 export type Color = 'purple' | 'darkPurple' | 'yellow' | 'white' | 'gray' | 'none';
+
+export const gradients = {
+  purple:
+    'radial-gradient(circle, rgba(82,28,117,1) 0%, rgba(49,18,69,1) 100%)',
+  darkPurple:
+    'radial-gradient(circle, rgba(49,18,69,1) 0%, rgba(36,11,52,1) 100%)',
+  yellow:
+    'radial-gradient(circle, rgba(240,162,57,1) 0%, rgba(217,145,48,1) 100%)',
+  white:
+    'radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(237,237,237,1) 100%)',
+  gray: '',
+  none: '',
+} as const;
