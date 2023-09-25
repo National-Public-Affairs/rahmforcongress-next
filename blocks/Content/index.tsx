@@ -12,11 +12,10 @@ const ContentBlock: React.FC<Props> = ({
   backgroundColor,
   richText,
 }) => (
-
   <div
     className={classes.wrapper}
     style={{
-      backgroundColor: backgroundColor?  colors[backgroundColor] : 'transparent'
+      backgroundColor: backgroundColor ? colors[backgroundColor] : 'transparent'
     }}
   >
     <GridContainer>
