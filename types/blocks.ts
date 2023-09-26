@@ -18,6 +18,12 @@ export type BlockType =
   | 'twoColumn'
   | 'quote';
 
+  // satisfies quote block type
+  type QuoteMedium = {
+    id: string;
+    quoteMedium: MediaType;
+  };
+
 export type LayoutType = {
   blockType: BlockType;
   id: string;
@@ -26,6 +32,7 @@ export type LayoutType = {
   options?: DonationOptionType[];
   backgroundColor?: Color;
   backgroundMedia?: MediaType[];
+  quoteMedia?: QuoteMedium[];
   ctaBackgroundColor?: Color;
   richText?: RichTextType[];
   displayBorder?: boolean;
@@ -150,5 +157,5 @@ export type QuoteBlockType = {
   id: string;
   backgroundColor: keyof typeof gradients;
   richText?: any;
-  backgroundMedia: MediaType[];
+  quoteMedia?: QuoteMedium[];
 };

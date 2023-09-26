@@ -112,7 +112,7 @@ const RenderBlocks: React.FC<Props> = ({ layout, className }) => {
                   <QuoteBlock
                     id={block.id}
                     backgroundColor={block.backgroundColor ? block.backgroundColor : 'darkPurple'}
-                    backgroundMedia={block.backgroundMedia ? block.backgroundMedia : []}
+                    quoteMedia={block.quoteMedia ? block.quoteMedia : undefined}
                     richText={block.richText}
                   />
                 </section>

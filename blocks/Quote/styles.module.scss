@@ -1,25 +1,39 @@
 @import '../../styles/base.module.scss';
 
 .wrapper {
+  max-height: 50vh;
   text-align: center;
   @include grid-center-parent;
+  overflow: hidden;
+
+  @include mid-break {
+    max-height: 35vh;
+  }
 }
 
 .content {
   @include grid-center-child;
+  margin: base(10);
   z-index: 1;
-  padding: base(10) 0;
 
   @include mid-break {
-    padding: base(8) 0;
+    margin: base(5);
+  }
+
+  @include small-break {
+    margin: base(2);
   }
 }
 
 .mediaWrapper {
-  grid-column: 1;
-  grid-row: 1;
+  @include grid-center-child;
   justify-self: stretch;
   align-self: stretch;
-  z-index: 0;
   background-color: red;
+  filter: grayscale(100%);
+  opacity: 0.25;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
 }

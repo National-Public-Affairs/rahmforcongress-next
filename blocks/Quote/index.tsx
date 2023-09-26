@@ -4,38 +4,46 @@ import type { QuoteBlockType } from '@/types/blocks';
 
 import { gradients } from '@/styles/styles';
 
-import GridContainer from '@/components/layout/GridContainer';
+import Media from '@/components/Media';
 import RichText from '@/components/RichText';
 
 import classes from './styles.module.scss';
-import { Cell, Grid } from '@faceless-ui/css-grid';
 
 type Props = QuoteBlockType;
 
 const QuoteBlock: React.FC<Props> = ({
   backgroundColor,
   richText,
-  backgroundMedia,
+  quoteMedia,
 }) => {
   return (
     <div
+      className={classes.wrapper}
       style={{
         background: backgroundColor ? gradients[backgroundColor] : 'transparent',
       }}
     >
-        <GridContainer>
-          <Grid>
-            <Cell
-              cols={8}
-              start={3}
-              colsM={8}
-              startM={1}
-              className={classes.wrapper}
-            >
-              <RichText content={richText} className={classes.content} />
-            </Cell>
-          </Grid>
-        </GridContainer>
+      <RichText content={richText} className={classes.content} />
+        {
+          quoteMedia && quoteMedia.length > 0
+            ? (
+              <div className={classes.mediaWrapper}>
+                {
+                  quoteMedia.map((medium) => {
+                    return (
+                      <div key={medium.id}>
+                        <Media
+                          mimeType={medium.quoteMedium.mimeType}
+                          url={medium.quoteMedium.url}
+                        />
+                      </div>
+                    )
+                  })
+                }
+              </div>
+            )
+            : null
+        }
     </div>
   );
 };
