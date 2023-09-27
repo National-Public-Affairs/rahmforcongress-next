@@ -61,6 +61,10 @@ $gutter-xl: base(7);
 //////////////////////////////
 $transition-default: 300ms;
 
+@mixin transition {
+  transition: all $transition-default ease-in-out;
+}
+
 
 
 ////////////////////////////

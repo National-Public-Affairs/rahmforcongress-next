@@ -1,0 +1,11 @@
+@import '../../../../styles/base.module.scss';
+
+.icon {
+  fill: var(--white);
+  @include transition;
+
+  &:hover {
+    fill: var(--yellow);
+    cursor: pointer;
+  }
+}

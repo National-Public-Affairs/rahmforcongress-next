@@ -3,11 +3,16 @@
 import React, { useCallback } from 'react';
 import { Poppins } from 'next/font/google';
 import { Grid, Cell } from '@faceless-ui/css-grid';
+
 import type { FooterType, SocialType, LegalType } from '@/types/globals'; // import legal and footer data
+
 import GridContainer from '../GridContainer';
 import Arrow from '../../graphics/Arrow';
 import CMSLink from '../../Link';
 import PolygonFive from '../../graphics/Polygons/PolygonFive';
+import Facebook from '@/components/graphics/Icons/Facebook';
+import Twitter from '@/components/graphics/Icons/Twitter';
+
 import { colors } from '@/styles/styles';
 import classes from './styles.module.scss';
 import typeStyles from '../../../styles/app.module.scss';
@@ -32,6 +37,35 @@ const Footer: React.FC<Props> = ({
     window.scrollTo(0, 0);
   }, []);
 
+  const renderSocial = socialMedia?.links.map((item) => {
+    if (item.label === 'Facebook' || item.label === 'facebook') {
+      return (
+        <a key={item.id} href={item.url}>
+          <Facebook />
+        </a>
+      );
+    }
+    if (item.label === 'Twitter' || item.label === 'twitter') {
+      return (
+        <a key={item.id} href={item.url}>
+          <Twitter />
+        </a>
+      );
+    }
+
+    return (
+      <CMSLink
+        key={item.id}
+        type='custom'
+        label={item.label}
+        newTab
+        url={item.url}
+        className={`${classes.social} ${typeStyles.h6}`}
+      />
+    );
+  });
+
+console.log('SOCIAL MEDIA PROPS IN FOOTER', socialMedia)
   return (
     <footer className={`${classes.footer} ${poppins.className}`}>
       <GridContainer>
@@ -101,16 +135,8 @@ const Footer: React.FC<Props> = ({
                   {
                     socialMedia
                     && socialMedia.links.length > 0
-                    && socialMedia.links.map((item) => (
-                      <CMSLink
-                        key={item.id}
-                        type='custom'
-                        label={item.label}
-                        newTab
-                        url={item.url}
-                        className={`${classes.social} ${typeStyles.h6}`}
-                      />
-                    ))
+                    ? renderSocial
+                    : null
                   }
                 </div>
               </Cell>
