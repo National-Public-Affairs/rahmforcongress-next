@@ -1,0 +1,51 @@
+@import '../../styles/base.module.scss';
+
+.wrapper {
+  min-width: 200vw;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  overflow: hidden;
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+.contentWrapper {
+  position: relative;
+  min-width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  animation: marquee 15s linear infinite;
+}
+
+.mediaWrapper {
+  flex: 0 0 33vw;
+  height: base(25);
+  overflow: hidden;
+
+  @include extra-extra-large-break {
+    height: base(20);
+  }
+  @include extra-large-break {
+    height: base(12);
+  }
+  @include large-break {
+    height: base(10);
+  }
+  @include mid-break {
+    height: base(4.5);
+  }
+  @include small-break {
+    width: 50%;
+    height: base(3);
+  }
+}
+
+@keyframes marquee {
+	0%   { transform: translateX(0%); }
+	100% { transform: translateX(-100%); }
+}
