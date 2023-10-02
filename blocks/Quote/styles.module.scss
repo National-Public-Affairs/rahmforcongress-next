@@ -1,7 +1,7 @@
 @import '../../styles/base.module.scss';
 
 .wrapper {
-  max-height: 50vh;
+  max-height: 75vh;
   text-align: center;
   @include grid-center-parent;
   overflow: hidden;
