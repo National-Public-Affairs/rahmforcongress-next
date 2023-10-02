@@ -7,3 +7,11 @@
     padding: 0;
   }
 }
+
+.carousel {
+  padding: base(4) 0;
+
+  @include small-break {
+    padding: base(2) 0;
+  }
+}
