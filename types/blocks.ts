@@ -170,6 +170,7 @@ export type QuoteBlockType = {
 // Quote
 ///////////////////////
 type CarouselItem = {
+  id: string;
   media: MediaType;
 }
 
