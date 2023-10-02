@@ -65,7 +65,6 @@ const Footer: React.FC<Props> = ({
     );
   });
 
-console.log('SOCIAL MEDIA PROPS IN FOOTER', socialMedia)
   return (
     <footer className={`${classes.footer} ${poppins.className}`}>
       <GridContainer>
