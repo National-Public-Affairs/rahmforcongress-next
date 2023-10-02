@@ -3,6 +3,7 @@ import React from 'react';
 import type { LayoutType } from '@/types/blocks';
 
 import { colors } from '@/styles/styles';
+import { gradients } from '@/styles/styles';
 
 import DonationBlock from '@/blocks/Donation';
 import ContentBlock from '@/blocks/Content';
@@ -89,8 +90,10 @@ const RenderBlocks: React.FC<Props> = ({ layout, className }) => {
               return (
                 <section
                   key={block.id}
+                  className={classes.carousel}
                   style={{
-                    backgroundColor: block.backgroundColor ? colors[block.backgroundColor] : 'transparent',
+                    // backgroundColor: block.backgroundColor ? colors[block.backgroundColor] : 'transparent',
+                    background: block.backgroundColor ? gradients[block.backgroundColor] : 'darkPurple'
                   }}
                 >
                   {
