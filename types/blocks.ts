@@ -16,7 +16,8 @@ export type BlockType =
   | 'slider'
   | 'newsBlock'
   | 'twoColumn'
-  | 'quote';
+  | 'quote'
+  | 'carousel';
 
   // satisfies quote block type
   type QuoteMedium = {
@@ -44,6 +45,7 @@ export type LayoutType = {
   introContent: RichTextType;
   form?: FormType;
   slides?: Slide[];
+  items?: CarouselItem[];
   display?: boolean;
   twoColumn?: TwoColumnContentType[];
 };
@@ -150,6 +152,8 @@ type TwoColumnContentType = {
   type?: 'bold' | 'subtle';
 } & AccentMediaBlockType;
 
+
+
 ///////////////////////
 // Quote
 ///////////////////////
@@ -158,4 +162,19 @@ export type QuoteBlockType = {
   backgroundColor: keyof typeof gradients;
   richText?: any;
   quoteMedia?: QuoteMedium[];
+};
+
+
+
+///////////////////////
+// Quote
+///////////////////////
+type CarouselItem = {
+  media: MediaType;
+}
+
+export type CarouselBlockType = {
+  id: string;
+  backgroundColor: Color;
+  items: CarouselItem[];
 };
