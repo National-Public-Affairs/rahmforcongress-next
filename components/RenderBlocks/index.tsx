@@ -7,6 +7,7 @@ import { colors } from '@/styles/styles';
 import DonationBlock from '@/blocks/Donation';
 import ContentBlock from '@/blocks/Content';
 import AccentMediaBlock from '@/blocks/Accent Media';
+import CarouselBlock from '@/blocks/Carousel';
 import CtaBlock from '@/blocks/CallToAction';
 import FormBlock from '@/blocks/Form';
 import QuoteBlock from '@/blocks/Quote';
@@ -82,6 +83,25 @@ const RenderBlocks: React.FC<Props> = ({ layout, className }) => {
                     styleType={block.type ? block.type : 'subtle'}
                     richText={block.richText}
                   />
+                </section>
+              );
+            case 'carousel':
+              return (
+                <section
+                  key={block.id}
+                  style={{
+                    backgroundColor: block.backgroundColor ? colors[block.backgroundColor] : 'transparent',
+                  }}
+                >
+                  {
+                    block.items && (
+                      <CarouselBlock
+                        id={block.id}
+                        backgroundColor={block.ctaBackgroundColor ? block.ctaBackgroundColor : 'darkPurple'}
+                        items={block?.items}
+                      />
+                    )
+                  }
                 </section>
               );
             case 'formBlock':
