@@ -9,7 +9,6 @@ import classes from './styles.module.scss';
 type Props = CarouselBlockType;
 
 const CarouselBlock: React.FC<Props> = ({ items }) => {
-  console.log('CAROUSEL ITEMS', items)
   return (
     <div className={classes.wrapper}>
       <div className={classes.contentWrapper}>
