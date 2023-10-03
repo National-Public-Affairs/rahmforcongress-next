@@ -15,7 +15,7 @@
 
 .contentWrapper {
   position: relative;
-  min-width: 100%;
+  width: min-content;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -23,8 +23,8 @@
 }
 
 .mediaWrapper {
-  flex: 0 0 33vw;
-  height: base(25);
+  width: 33vw;
+  height: base(20);
   overflow: hidden;
 
   @include extra-extra-large-break {
