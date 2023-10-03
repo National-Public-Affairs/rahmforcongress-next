@@ -6,6 +6,7 @@
   flex-flow: row nowrap;
   justify-content: space-around;
   align-items: center;
+  background-color: transparent;
   overflow: hidden;
 
   &:hover {
@@ -27,6 +28,10 @@
   height: base(20);
   overflow: hidden;
 
+  &:hover {
+    animation-play-state: paused;
+  }
+
   @include extra-extra-large-break {
     height: base(20);
   }
@@ -37,11 +42,15 @@
     height: base(10);
   }
   @include mid-break {
-    height: base(4.5);
+    width: 40vw;
+    height: base(9);
   }
   @include small-break {
-    width: 50%;
-    height: base(3);
+    width: 50vw;
+    height: base(8);
+  }
+  @include extra-small-break {
+    height: base(5);
   }
 }
 
