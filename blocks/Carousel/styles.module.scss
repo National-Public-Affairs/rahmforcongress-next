@@ -1,7 +1,6 @@
 @import '../../styles/base.module.scss';
 
 .wrapper {
-  min-width: 200vw;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-around;
@@ -47,7 +46,7 @@
   }
   @include small-break {
     width: 50vw;
-    height: base(8);
+    height: base(7);
   }
   @include extra-small-break {
     height: base(5);
