@@ -44,6 +44,7 @@ const Media: React.FC<Props> = ({
           src={url}
           alt={altData}
           fill
+          sizes="100vw"
           style={{
             clipPath: masks.maskOne,
           }}
@@ -60,6 +61,7 @@ const Media: React.FC<Props> = ({
           src={url}
           alt={altData}
           fill
+          sizes="100vw"
           style={{
             clipPath: masks.maskTwo,
           }}
@@ -76,6 +78,7 @@ const Media: React.FC<Props> = ({
           src={url}
           alt={altData}
           fill
+          sizes="100vw"
         />
       </div>
     );
@@ -88,6 +91,7 @@ const Media: React.FC<Props> = ({
         src={url}
         alt={altData}
         fill
+        sizes="100vw"
       />
     </div>
   );
